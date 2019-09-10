@@ -13,7 +13,6 @@
     "build": "npm run clean && babel lib --out-dir bin --source-maps --quiet --ignore '**/*.spec.js' && chmod +x bin/clis/*-cli.js",
     "clean": "rimraf bin",
     "coverage": "jest --coverage",
-    "postinstall": "npm run build",
     "lint": "eslint .",
     "test": "jest",
     "test:watch": "jest --watch"
