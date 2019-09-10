@@ -4,13 +4,13 @@
   "description": "LINE API CLIs for Node.js",
   "main": "lib/index.js",
   "bin": {
-    "line": "bin/line-cli.js",
-    "messaging": "bin/messaging-cli.js",
-    "richmenu": "bin/richmenu-cli.js",
-    "things": "bin/things-cli.js"
+    "line": "bin/clis/line-cli.js",
+    "messaging": "bin/clis/messaging-cli.js",
+    "richmenu": "bin/clis/richmenu-cli.js",
+    "things": "bin/clis/things-cli.js"
   },
   "scripts": {
-    "build": "npm run clean && babel lib --out-dir bin --source-maps --quiet --ignore '**/*.spec.js' && chmod +x bin/*-cli.js",
+    "build": "npm run clean && babel lib --out-dir bin --source-maps --quiet --ignore '**/*.spec.js' && chmod +x bin/clis/*-cli.js",
     "clean": "rimraf bin",
     "coverage": "jest --coverage",
     "postinstall": "npm run build",
