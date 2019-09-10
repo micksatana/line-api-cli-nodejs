@@ -8,5 +8,5 @@ module.exports = {
   ],
   coverageDirectory: 'coverage',
   roots: ['lib'],
-  setupFilesAfterEnv: ['jest-extended', '<rootDir>/global-test-setup.js']
+  setupFilesAfterEnv: ['jest-extended', '<rootDir>/global-test-setup.js', 'jest-date-mock']
 };
