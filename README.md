@@ -16,3 +16,10 @@ To initialize project configuration file, run the following command.
 line init
 ```
 It will create `.line-api-cli.yml` configuration file containing necessary information for the CLI to handle API request/response for you.
+
+## Issue a short-lived access token
+To issue a short-lived access token, run the following command.
+```
+line token --issue
+```
+It will issue a short-lived access token. You can choose whether to replace the token into `.line-api-cli.yml`
