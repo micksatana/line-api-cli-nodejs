@@ -55,7 +55,7 @@ class LINECommand {
       name: 'issue',
       type: Boolean
     }, {
-      name: 'save',
+      name: 'revoke',
       type: Boolean
     }], {
       argv

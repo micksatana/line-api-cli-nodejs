@@ -31,6 +31,12 @@ It will issue a short-lived access token. You can choose whether to replace the 
 
 <img width="529" alt="sample-issue-access-token" src="https://user-images.githubusercontent.com/1315909/64685575-6e84af00-d4b1-11e9-8438-6614e81f3d9d.png">
 
+## Revoke access token
+To revoke access token, run the following command.
+```
+line token --revoke
+```
+
 ## Comprehensive usage
 We provide comprehensive help message so you can see usage of each command / operation / option with CLI.
 

@@ -14,7 +14,8 @@ const theme = {
   code: 'cyan',
   help: 'green',
   warn: 'yellow',
-  error: 'red'
+  error: 'red',
+  success: 'green'
 };
 var _default = theme;
 exports.default = _default;

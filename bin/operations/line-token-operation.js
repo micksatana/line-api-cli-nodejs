@@ -17,6 +17,8 @@ var _operation = _interopRequireDefault(require("./operation"));
 
 var _oauthIssueTokenRequest = _interopRequireDefault(require("../apis/oauth-issue-token-request"));
 
+var _oauthRevokeTokenRequest = _interopRequireDefault(require("../apis/oauth-revoke-token-request"));
+
 var _imageHelper = _interopRequireDefault(require("../image-helper"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -66,11 +68,19 @@ class LINETokenOperation extends _operation.default {
       return false;
     }
 
+    if (options.issue === true) {
+      return this.issue();
+    } else if (options.revoke === true) {
+      return this.revoke();
+    }
+  }
+
+  static async issue() {
     let accessToken;
     let expiryDate = new Date();
 
     try {
-      const response = await this.request.send(this.config.channel.id, this.config.channel.secret);
+      const response = await this.issueRequest.send(this.config.channel.id, this.config.channel.secret);
       accessToken = response.data.access_token;
       expiryDate.setSeconds(response.data.expires_in);
       console.log(`Access token: ${accessToken.info}`.help);
@@ -104,9 +114,42 @@ class LINETokenOperation extends _operation.default {
     return true;
   }
 
+  static async revoke() {
+    const prompts = require('prompts');
+
+    const {
+      accessToken
+    } = await prompts({
+      type: 'text',
+      name: 'accessToken',
+      message: 'Paste access token you want to revoke here'
+    });
+
+    if (!accessToken) {
+      return false;
+    }
+
+    try {
+      const response = await this.revokeRequest.send(accessToken);
+
+      if (response.status === 200) {
+        console.log('Revoked'.success);
+        return true;
+      } else {
+        console.log(`Response with status ${response.status}`.warn);
+        return false;
+      }
+    } catch (error) {
+      console.error(`${error.response.statusText} or invalid token`.error);
+      return false;
+    }
+  }
+
 }
 
 exports.default = LINETokenOperation;
 
-_defineProperty(LINETokenOperation, "request", new _oauthIssueTokenRequest.default());
+_defineProperty(LINETokenOperation, "issueRequest", new _oauthIssueTokenRequest.default());
+
+_defineProperty(LINETokenOperation, "revokeRequest", new _oauthRevokeTokenRequest.default());
 //# sourceMappingURL=line-token-operation.js.map
