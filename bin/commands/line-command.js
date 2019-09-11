@@ -9,13 +9,15 @@ require("../typedef");
 
 var _colors = _interopRequireDefault(require("colors"));
 
+var _imageHelper = _interopRequireDefault(require("../image-helper"));
+
 var _theme = _interopRequireDefault(require("../theme"));
 
 var _lineInitOperation = _interopRequireDefault(require("../operations/line-init-operation"));
 
-var _package = require("../../package.json");
-
 var _lineTokenOperation = _interopRequireDefault(require("../operations/line-token-operation"));
+
+var _package = require("../../package.json");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -77,6 +79,8 @@ class LINECommand {
       if (options.help) {
         const commandLineUsage = require('command-line-usage');
 
+        await _imageHelper.default.draw('chick-helps');
+
         switch (operation) {
           case 'init':
             console.log(commandLineUsage(_lineInitOperation.default.usage));
@@ -94,6 +98,7 @@ class LINECommand {
       }
 
       if (options.version) {
+        await _imageHelper.default.draw('chick-helps');
         console.log(this.versionText);
         process.exit(0);
       }
@@ -103,11 +108,13 @@ class LINECommand {
       } else if (operation === 'token') {
         await _lineTokenOperation.default.run(options);
       } else {
+        await _imageHelper.default.draw('chick-helps');
         console.log(`Unknown operation: ${(operation || 'undefined').code}`.warn);
       }
 
       return;
     } catch (error) {
+      await _imageHelper.default.draw('chick-helps');
       console.error(error);
       process.exit(1);
     }

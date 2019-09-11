@@ -62,3 +62,6 @@ typings/
 
 # CLIs
 .line-api-cli.yml
+
+# OS
+.DS_Store

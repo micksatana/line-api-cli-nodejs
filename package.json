@@ -1,6 +1,6 @@
 {
   "name": "@intocode-io/line-api-cli",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "LINE API CLIs for Node.js",
   "main": "lib/index.js",
   "bin": {
@@ -13,6 +13,7 @@
     "clean": "rimraf bin",
     "coverage": "jest --coverage",
     "lint": "eslint .",
+    "postinstall": "node bin/postinstall.js",
     "test": "jest",
     "test:watch": "jest --watch"
   },
@@ -46,7 +47,8 @@
     "command-line-usage": "^6.0.2",
     "console.table": "^0.10.0",
     "js-yaml": "^3.13.1",
-    "prompts": "^2.2.1"
+    "prompts": "^2.2.1",
+    "terminal-kit": "^1.31.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",

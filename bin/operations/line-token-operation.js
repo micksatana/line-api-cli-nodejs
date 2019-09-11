@@ -17,6 +17,8 @@ var _operation = _interopRequireDefault(require("./operation"));
 
 var _oauthIssueTokenRequest = _interopRequireDefault(require("../apis/oauth-issue-token-request"));
 
+var _imageHelper = _interopRequireDefault(require("../image-helper"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -47,6 +49,7 @@ class LINETokenOperation extends _operation.default {
 
   static async run(options) {
     if (!options || !options.issue && !options.revoke) {
+      await _imageHelper.default.draw('chick-helps');
       console.log(require('command-line-usage')(this.usage));
       return false;
     }
