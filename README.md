@@ -31,7 +31,12 @@ It will issue a short-lived access token. You can choose whether to replace the 
 
 <img width="529" alt="sample-issue-access-token" src="https://user-images.githubusercontent.com/1315909/64685575-6e84af00-d4b1-11e9-8438-6614e81f3d9d.png">
 
-# License
+## Comprehensive usage
+We provide comprehensive help message so you can see usage of each command / operation / option with CLI.
+
+<img width="680" alt="sample-help" src="https://user-images.githubusercontent.com/1315909/64685826-d20edc80-d4b1-11e9-82fc-596009d85a87.png">
+
+## License
 MIT License
 
 Copyright (c) 2019 intocode Co., Ltd.
@@ -54,3 +59,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+## Images copyright notice
+
+Images used in this repository are not own by any maintainers. Do NOT distribute the images. They are used only for friendly-looking CLI. If a copyright owner would like to remove any image, please open an issue here and we will remove as soon as possible.
