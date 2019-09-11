@@ -10,12 +10,17 @@ Command line interface for LINE APIs. This module will help you to easily work w
 npm i @intocode-io/line-api-cli -g
 ```
 
+<img width="414" alt="sample-npm-i" src="https://user-images.githubusercontent.com/1315909/64685066-7e4fc380-d4b0-11e9-9c69-11f85fe6dd97.png">
+
 ## Project setup
 To initialize project configuration file, run the following command.
 ```
 line init
 ```
 It will create `.line-api-cli.yml` configuration file containing necessary information for the CLI to handle API request/response for you.
+
+<img width="507" alt="sample-line-init" src="https://user-images.githubusercontent.com/1315909/64685306-f28a6700-d4b0-11e9-94cc-dced718b1c9c.png">
+
 
 ## Issue a short-lived access token
 To issue a short-lived access token, run the following command.
@@ -24,6 +29,7 @@ line token --issue
 ```
 It will issue a short-lived access token. You can choose whether to replace the token into `.line-api-cli.yml`
 
+<img width="529" alt="sample-issue-access-token" src="https://user-images.githubusercontent.com/1315909/64685575-6e84af00-d4b1-11e9-8438-6614e81f3d9d.png">
 
 # License
 MIT License
