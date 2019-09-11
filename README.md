@@ -38,7 +38,14 @@ line token --revoke
 ```
 
 ## Comprehensive usage
-We provide comprehensive help message so you can see usage of each command / operation / option with CLI.
+We provide comprehensive usage of each command / operation / option with CLI. Simply run a command with/without operation and follow by `--help` option. For example,
+```
+line token --help
+```
+Or
+```
+line --help
+```
 
 <img width="680" alt="sample-help" src="https://user-images.githubusercontent.com/1315909/64685826-d20edc80-d4b1-11e9-82fc-596009d85a87.png">
 
