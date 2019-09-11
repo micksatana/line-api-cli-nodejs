@@ -1,6 +1,6 @@
 {
   "name": "@intocode-io/line-api-cli",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "LINE API CLIs for Node.js",
   "main": "lib/index.js",
   "bin": {
@@ -67,7 +67,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run lint && npm test"
+      "pre-push": "npm run lint && npm test",
+      "pre-commit": "npm run build"
     }
   }
 }
