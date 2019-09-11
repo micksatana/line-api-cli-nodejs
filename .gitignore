@@ -61,5 +61,4 @@ typings/
 .next
 
 # CLIs
-bin
 .line-api-cli.yml
