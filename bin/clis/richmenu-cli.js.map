@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../lib/clis/richmenu-cli.js"],"names":["RichmenuCommand","cli"],"mappings":"AAAA;;;AACA;;;;AAEAA,yBAAgBC,GAAhB","sourcesContent":["#!/usr/bin/env node\nimport RichmenuCommand from '../commands/richmenu-command';\n\nRichmenuCommand.cli();\n"],"file":"richmenu-cli.js"}

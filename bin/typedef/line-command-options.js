@@ -1,9 +1,9 @@
 /**
  * @typedef LINECommandOptions
- * @property {Boolean} help
- * @property {Boolean} version
- * @property {Boolean} issue
- * @property {Boolean} revoke
+ * @property {boolean} help
+ * @property {boolean} version
+ * @property {boolean} issue
+ * @property {boolean} revoke
  */
 "use strict";
 //# sourceMappingURL=line-command-options.js.map

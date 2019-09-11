@@ -31,7 +31,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 class LINETokenOperation extends _operation.default {
   static get usage() {
-    /** @type {Content|OptionList|Section[]} */
+    /** @type {Section[]} */
     const sections = [{
       header: 'Issue/Revoke access token '.help,
       content: `After channel ID and secret are configured. Issue a channel access token and save it.` + _os.EOL + _os.EOL + `line token --issue`.code + _os.EOL + _os.EOL + `In case you want to revoke an access token, you can run with --revoke option.` + _os.EOL + _os.EOL + `line token --revoke`.code
