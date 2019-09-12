@@ -13,17 +13,15 @@ var _command = _interopRequireDefault(require("./command"));
 
 var _imageHelper = _interopRequireDefault(require("../image-helper"));
 
-var _lineInitOperation = _interopRequireDefault(require("../operations/line-init-operation"));
-
-var _lineTokenOperation = _interopRequireDefault(require("../operations/line-token-operation"));
-
 var _theme = _interopRequireDefault(require("../theme"));
+
+var _richmenuAddOperation = _interopRequireDefault(require("../operations/richmenu-add-operation"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-class LINECommand extends _command.default {
+class RichmenuCommand extends _command.default {
   /**
-   * @return {operation:string, options:LINECommandOptions, _unknown: Array<string>}
+   * @return {operation:string, options:RichmenuCommandOptions, _unknown: Array<string>}
    */
   static getCommandLineArgs() {
     const commandLineArgs = require('command-line-args');
@@ -45,12 +43,6 @@ class LINECommand extends _command.default {
     }, {
       name: 'version',
       alias: 'v',
-      type: Boolean
-    }, {
-      name: 'issue',
-      type: Boolean
-    }, {
-      name: 'revoke',
       type: Boolean
     }], {
       argv
@@ -77,16 +69,12 @@ class LINECommand extends _command.default {
         await _imageHelper.default.draw('chick-helps');
 
         switch (operation) {
-          case 'init':
-            console.log(commandLineUsage(_lineInitOperation.default.usage));
-            break;
-
-          case 'token':
-            console.log(commandLineUsage(_lineTokenOperation.default.usage));
+          case 'add':
+            console.log(commandLineUsage(_richmenuAddOperation.default.usage));
             break;
 
           default:
-            console.log(commandLineUsage([..._lineInitOperation.default.usage, ..._lineTokenOperation.default.usage]));
+            console.log(commandLineUsage([..._richmenuAddOperation.default.usage]));
         }
 
         process.exit(0);
@@ -98,10 +86,8 @@ class LINECommand extends _command.default {
         process.exit(0);
       }
 
-      if (operation === 'init') {
-        await _lineInitOperation.default.run(options);
-      } else if (operation === 'token') {
-        await _lineTokenOperation.default.run(options);
+      if (operation === 'add') {
+        await _richmenuAddOperation.default.run(options);
       } else {
         await _imageHelper.default.draw('chick-helps');
         console.log(`Unknown operation: ${(operation || 'undefined').code}`.warn);
@@ -117,5 +103,5 @@ class LINECommand extends _command.default {
 
 }
 
-exports.default = LINECommand;
-//# sourceMappingURL=line-command.js.map
+exports.default = RichmenuCommand;
+//# sourceMappingURL=richmenu-command.js.map
