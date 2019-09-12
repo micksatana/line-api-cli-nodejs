@@ -1,6 +1,7 @@
 ## [0.2.0]
 ### Added
  - `line token --revoke`
+ - `richmenu add`
 
 ## [0.1.0]
 ### Added
