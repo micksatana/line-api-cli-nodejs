@@ -79,6 +79,21 @@ class RichmenuCommand extends _command.default {
 
         process.exit(0);
       }
+
+      if (options.version) {
+        await _imageHelper.default.draw('chick-helps');
+        console.log(this.versionText);
+        process.exit(0);
+      }
+
+      if (operation === 'add') {
+        await _richmenuAddOperation.default.run(options);
+      } else {
+        await _imageHelper.default.draw('chick-helps');
+        console.log(`Unknown operation: ${(operation || 'undefined').code}`.warn);
+      }
+
+      return;
     } catch (error) {
       await _imageHelper.default.draw('chick-helps');
       console.error(error);

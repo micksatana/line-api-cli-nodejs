@@ -32,10 +32,6 @@ class LINEInitOperation extends _operation.default {
 
     const exists = _fs.default.existsSync(`./${LINEInitOperation.configFileName}`);
 
-    const cancelHandler = {
-      onCancel: () => process.exit(0)
-    };
-
     if (exists === true) {
       console.log(`${LINEInitOperation.configFileName} already exists`.warn);
       const {
@@ -62,14 +58,14 @@ class LINEInitOperation extends _operation.default {
       name: 'id',
       message: 'Channel ID?',
       hint: 'You can find Channel ID and Secret at https://manager.line.biz/account/<Account ID>/setting/messaging-api'
-    }, cancelHandler);
+    }, this.cancelOption);
     const {
       secret
     } = await prompts({
       type: 'text',
       name: 'secret',
       message: 'Channel Secret?'
-    }, cancelHandler);
+    }, this.cancelOption);
     const {
       hasLongLivedAccessToken
     } = await prompts({
@@ -79,7 +75,7 @@ class LINEInitOperation extends _operation.default {
       initial: false,
       active: 'Yes',
       inactive: 'No'
-    }, cancelHandler);
+    }, this.cancelOption);
     let accessToken = '';
 
     if (hasLongLivedAccessToken) {
@@ -87,7 +83,7 @@ class LINEInitOperation extends _operation.default {
         type: 'text',
         name: 'accessToken',
         message: 'Long-lived access token?'
-      }, cancelHandler);
+      }, this.cancelOption);
       accessToken = rsToken.accessToken;
     }
 
