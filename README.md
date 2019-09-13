@@ -1,5 +1,6 @@
 
 # line-api-cli-nodejs
+[![Actions Status](https://github.com/intocode-io/line-api-cli-nodejs/workflows/Coverage/badge.svg)](https://github.com/intocode-io/line-api-cli-nodejs/actions)
 [![codecov](https://codecov.io/gh/intocode-io/line-api-cli-nodejs/branch/master/graph/badge.svg)](https://codecov.io/gh/intocode-io/line-api-cli-nodejs)
 [![dependencies Status](https://david-dm.org/intocode-io/line-api-cli-nodejs/status.svg)](https://david-dm.org/intocode-io/line-api-cli-nodejs)
 
