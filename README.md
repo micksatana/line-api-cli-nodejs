@@ -10,6 +10,30 @@
 
 Command line interface for LINE APIs. This module will help you to easily work with LINE APIs via CLI.
 
+## Short summary
+
+LINE API CLI will help you work with your LINE-API-related projects faster. You do not need to switch between a web browser and IDE. You can focus working in your IDE with developer-friendly command line interface.
+
+### Available commands, operations, and options
+ - `line`
+    - `init`
+    - `token`
+      - `--issue`
+      - `--revoke`
+ - `richmenu`
+    - `add`
+    - `remove`
+    - `list`
+    - `default`
+    - `link`
+    - `unlink` (upcoming)
+ - `liff` (upcoming)
+    - `add` (upcoming)
+    - `remove` (upcoming)
+    - `update` (upcoming)
+    - `list` (upcoming)
+ - `things` (upcoming)
+
 ## Installation
 ```
 npm i @intocode-io/line-api-cli -g
@@ -17,7 +41,7 @@ npm i @intocode-io/line-api-cli -g
 
 <img width="414" alt="npm i @intocode-io/line-api-cli -g" src="https://user-images.githubusercontent.com/1315909/64685066-7e4fc380-d4b0-11e9-9c69-11f85fe6dd97.png">
 
-## Project setup
+## Project setup with `line` command
 To initialize project configuration file, run the following command.
 ```
 line init
@@ -26,54 +50,83 @@ It will create `.line-api-cli.yml` configuration file containing necessary infor
 
 <img width="507" alt="line init" src="https://user-images.githubusercontent.com/1315909/64685306-f28a6700-d4b0-11e9-94cc-dced718b1c9c.png">
 
+### Issue a short-lived access token
+Long-lived access token is nice and easy to use for developers but it is not as secured as a short-lived access token.
 
-## Issue a short-lived access token
 To issue a short-lived access token, run the following command.
+
 ```
 line token --issue
 ```
+
 It will issue a short-lived access token. You can choose whether to replace the token into `.line-api-cli.yml`
 
 <img width="529" alt="line token --issue" src="https://user-images.githubusercontent.com/1315909/64685575-6e84af00-d4b1-11e9-8438-6614e81f3d9d.png">
 
-## Revoke access token
-To revoke access token, run the following command.
+Do not forget to replace a short-lived. It is recommended to write a script to replace the token monthly.
+
+### Revoke access token
+
+Ok, sometime you may feel insecure after exposing access token somewhere. No problem, you can revoke it by running this command.
+
 ```
 line token --revoke
 ```
 
-## Add a rich menu
-To add a rich menu, run the following command.
+## Working with `richmenu` command
+
+It's time to display nice UI menu to your users, or maybe some menu to some specific user(s). You can do those tasks with `richmenu` command.
+
+### Add a rich menu
+
+First you need to prepare a data file and an image file for rich menu. After you have those in your project directory, you can run the following command to add a rich menu.
+
 ```
 richmenu add
 ```
 
 <img width="482" alt="richmenu add" src="https://user-images.githubusercontent.com/1315909/64861793-138ebb80-d65b-11e9-8881-b8aaaf185e93.png">
 
-## List rich menus
-To list rich menus, run the following command.
+### List rich menus
+
+Rich menus can be listed with `list` operation.
+
 ```
 richmenu list
 ```
 
 <img width="612" alt="richmenu list" src="https://user-images.githubusercontent.com/1315909/64861824-31f4b700-d65b-11e9-8367-2c782bb8c4c4.png">
 
+### Remove a rich menu
 
-## Remove a rich menu
-To remove a rich menu, run the following command.
+Get bored of old rich menu? You can remove a rich menu with `remove` operation.
+
 ```
 richmenu remove
 ```
 
+Then choose a rich menu to be removed.
+
 <img width="480" alt="richmenu remove" src="https://user-images.githubusercontent.com/1315909/64874774-ef8ca380-d675-11e9-8e53-ac6e334f64b8.gif">
 
-## Set a rich menu as default
-To set a rich menu as default for all users, run the following command.
+### Set a rich menu as default
+
+If you'd like to set a rich menu as default for all users, run the following command.
+
 ```
 richmenu default
 ```
 
+### Link a rich menu to a user
+
+Rich menu can be linked to a specific user. For example, if you want a rich menu assigned only to LINE user with Administrator role. You can get a user ID and link a rich menu for the user with this command.
+
+```
+richmenu link
+```
+
 ## Comprehensive usage
+
 We provide comprehensive usage of each command / operation / option with CLI. Simply run a command with/without operation and follow by `--help` option. For example,
 ```
 line token --help

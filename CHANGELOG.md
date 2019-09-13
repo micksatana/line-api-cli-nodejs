@@ -1,3 +1,7 @@
+## [0.6.0]
+### Added
+ - `richmenu link`
+
 ## [0.5.0]
 ### Added
  - `richmenu default`
