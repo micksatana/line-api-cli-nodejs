@@ -1,8 +1,12 @@
 
 # line-api-cli-nodejs
-[![Actions Status](https://github.com/intocode-io/line-api-cli-nodejs/workflows/Coverage/badge.svg)](https://github.com/intocode-io/line-api-cli-nodejs/actions)
-[![codecov](https://codecov.io/gh/intocode-io/line-api-cli-nodejs/branch/master/graph/badge.svg)](https://codecov.io/gh/intocode-io/line-api-cli-nodejs)
-[![dependencies Status](https://david-dm.org/intocode-io/line-api-cli-nodejs/status.svg)](https://david-dm.org/intocode-io/line-api-cli-nodejs)
+[![Actions status](https://github.com/intocode-io/line-api-cli-nodejs/workflows/build/badge.svg)](https://github.com/intocode-io/line-api-cli-nodejs/actions)
+[![Codecov](https://codecov.io/gh/intocode-io/line-api-cli-nodejs/branch/master/graph/badge.svg)](https://codecov.io/gh/intocode-io/line-api-cli-nodejs)
+[![Dependencies status](https://david-dm.org/intocode-io/line-api-cli-nodejs/status.svg)](https://david-dm.org/intocode-io/line-api-cli-nodejs)
+[![Version](https://img.shields.io/npm/v/@intocode-io/line-api-cli.svg)](https://npmjs.com/package/@intocode-io/line-api-cli)
+![NPM](https://img.shields.io/npm/l/@intocode-io/line-api-cli)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/micksatana?locale.x=en_GB)
+
 
 Command line interface for LINE APIs. This module will help you to easily work with LINE APIs via CLI.
 

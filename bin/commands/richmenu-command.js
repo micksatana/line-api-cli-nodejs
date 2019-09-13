@@ -19,6 +19,8 @@ var _richmenuAddOperation = _interopRequireDefault(require("../operations/richme
 
 var _richmenuListOperation = _interopRequireDefault(require("../operations/richmenu-list-operation"));
 
+var _richmenuRemoveOperation = _interopRequireDefault(require("../operations/richmenu-remove-operation"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class RichmenuCommand extends _command.default {
@@ -79,8 +81,12 @@ class RichmenuCommand extends _command.default {
             console.log(commandLineUsage(_richmenuListOperation.default.usage));
             break;
 
+          case 'remove':
+            console.log(commandLineUsage(_richmenuRemoveOperation.default.usage));
+            break;
+
           default:
-            console.log(commandLineUsage([..._richmenuAddOperation.default.usage, ..._richmenuListOperation.default.usage]));
+            console.log(commandLineUsage([..._richmenuAddOperation.default.usage, ..._richmenuListOperation.default.usage, ..._richmenuRemoveOperation.default.usage]));
         }
 
         process.exit(0);
@@ -98,6 +104,8 @@ class RichmenuCommand extends _command.default {
         await _richmenuAddOperation.default.run();
       } else if (operation === 'list') {
         await _richmenuListOperation.default.run();
+      } else if (operation === 'remove') {
+        await _richmenuRemoveOperation.default.run();
       } else {
         await _imageHelper.default.draw('chick-helps');
         console.log(`Unknown operation: ${(operation || 'undefined').code}`.warn);
