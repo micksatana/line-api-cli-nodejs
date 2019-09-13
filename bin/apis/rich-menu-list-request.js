@@ -14,6 +14,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 class RichMenuListRequest extends _richMenuRequest.default {
   constructor(options) {
     super(options);
+    this.endpoint = `${this.endpoint}/list`;
   }
   /**
    * @return {import('axios').AxiosResponse<RichmenuListResponseData>}
@@ -21,7 +22,7 @@ class RichMenuListRequest extends _richMenuRequest.default {
 
 
   send() {
-    return this.axios.get(`${this.endpoint}/list`);
+    return this.axios.get(this.endpoint);
   }
 
 }

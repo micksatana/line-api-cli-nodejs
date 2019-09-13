@@ -9,11 +9,26 @@ var _oauthIssueTokenRequest = _interopRequireDefault(require("./apis/oauth-issue
 
 var _oauthRequest = _interopRequireDefault(require("./apis/oauth-request"));
 
+var _oauthRevokeTokenRequest = _interopRequireDefault(require("./apis/oauth-revoke-token-request"));
+
+var _richMenuAddRequest = _interopRequireDefault(require("./apis/rich-menu-add-request"));
+
+var _richMenuListRequest = _interopRequireDefault(require("./apis/rich-menu-list-request"));
+
+var _richMenuRequest = _interopRequireDefault(require("./apis/rich-menu-request"));
+
+var _richMenuUploadRequest = _interopRequireDefault(require("./apis/rich-menu-upload-request"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const apis = {
   OAuthIssueTokenRequest: _oauthIssueTokenRequest.default,
-  OAuthRequest: _oauthRequest.default
+  OAuthRequest: _oauthRequest.default,
+  OAuthRevokeTokenRequest: _oauthRevokeTokenRequest.default,
+  RichMenuAddRequest: _richMenuAddRequest.default,
+  RichMenuListRequest: _richMenuListRequest.default,
+  RichMenuRequest: _richMenuRequest.default,
+  RichMenuUploadRequest: _richMenuUploadRequest.default
 };
 var _default = apis;
 exports.default = _default;
