@@ -50,7 +50,7 @@ class LINETokenOperation extends _operation.default {
   }
 
   static async run(options) {
-    if (!options || !options.issue && !options.revoke) {
+    if (!options || options.issue !== true && options.revoke !== true) {
       await _imageHelper.default.draw('chick-helps');
       console.log(require('command-line-usage')(this.usage));
       return false;
@@ -70,7 +70,8 @@ class LINETokenOperation extends _operation.default {
 
     if (options.issue === true) {
       return this.issue();
-    } else if (options.revoke === true) {
+    } else {
+      // `options.revoke` will be true due to the first if-condition in this `run` method
       return this.revoke();
     }
   }
