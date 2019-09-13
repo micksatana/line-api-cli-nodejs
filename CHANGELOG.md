@@ -1,3 +1,7 @@
+## [0.4.0]
+### Added
+ - `richmenu remove`
+
 ## [0.3.1]
 ### Fixed
  - Fixed missing `richmenu` CLI

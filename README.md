@@ -1,8 +1,12 @@
 
 # line-api-cli-nodejs
-[![Actions Status](https://github.com/intocode-io/line-api-cli-nodejs/workflows/Coverage/badge.svg)](https://github.com/intocode-io/line-api-cli-nodejs/actions)
-[![codecov](https://codecov.io/gh/intocode-io/line-api-cli-nodejs/branch/master/graph/badge.svg)](https://codecov.io/gh/intocode-io/line-api-cli-nodejs)
-[![dependencies Status](https://david-dm.org/intocode-io/line-api-cli-nodejs/status.svg)](https://david-dm.org/intocode-io/line-api-cli-nodejs)
+[![Actions status](https://github.com/intocode-io/line-api-cli-nodejs/workflows/build/badge.svg)](https://github.com/intocode-io/line-api-cli-nodejs/actions)
+[![Codecov](https://codecov.io/gh/intocode-io/line-api-cli-nodejs/branch/master/graph/badge.svg)](https://codecov.io/gh/intocode-io/line-api-cli-nodejs)
+[![Dependencies status](https://david-dm.org/intocode-io/line-api-cli-nodejs/status.svg)](https://david-dm.org/intocode-io/line-api-cli-nodejs)
+[![Version](https://img.shields.io/npm/v/@intocode-io/line-api-cli.svg)](https://npmjs.com/package/@intocode-io/line-api-cli)
+![NPM](https://img.shields.io/npm/l/@intocode-io/line-api-cli)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/micksatana?locale.x=en_GB)
+
 
 Command line interface for LINE APIs. This module will help you to easily work with LINE APIs via CLI.
 
@@ -54,6 +58,14 @@ richmenu list
 
 <img width="612" alt="sample-richmenu-list" src="https://user-images.githubusercontent.com/1315909/64861824-31f4b700-d65b-11e9-8367-2c782bb8c4c4.png">
 
+
+## Remove a rich menu
+To remove a rich menu, run the following command.
+```
+richmenu remove
+```
+
+![sample-richmenu-remove](https://user-images.githubusercontent.com/1315909/64874774-ef8ca380-d675-11e9-8e53-ac6e334f64b8.gif)
 
 ## Comprehensive usage
 We provide comprehensive usage of each command / operation / option with CLI. Simply run a command with/without operation and follow by `--help` option. For example,
