@@ -67,6 +67,12 @@ richmenu remove
 
 <img width="480" alt="richmenu remove" src="https://user-images.githubusercontent.com/1315909/64874774-ef8ca380-d675-11e9-8e53-ac6e334f64b8.gif">
 
+## Set a rich menu as default
+To set a rich menu as default for all users, run the following command.
+```
+richmenu default
+```
+
 ## Comprehensive usage
 We provide comprehensive usage of each command / operation / option with CLI. Simply run a command with/without operation and follow by `--help` option. For example,
 ```

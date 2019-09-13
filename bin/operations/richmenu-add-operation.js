@@ -75,7 +75,7 @@ class RichmenuAddOperation extends _operation.default {
     try {
       const response = await this.addRequest.send(require(dataFilePath));
       richMenuId = response.data.richMenuId;
-      console.log(`Rich menu ID: ${richMenuId.data}`.success);
+      console.log(`Rich menu ID: ${richMenuId.code}`.success);
     } catch (error) {
       console.error(error);
       return false;

@@ -15,7 +15,11 @@ var _richMenuAddRequest = _interopRequireDefault(require("./apis/rich-menu-add-r
 
 var _richMenuListRequest = _interopRequireDefault(require("./apis/rich-menu-list-request"));
 
+var _richMenuRemoveRequest = _interopRequireDefault(require("./apis/rich-menu-remove-request"));
+
 var _richMenuRequest = _interopRequireDefault(require("./apis/rich-menu-request"));
+
+var _richMenuSetDefaultRequest = _interopRequireDefault(require("./apis/rich-menu-set-default-request"));
 
 var _richMenuUploadRequest = _interopRequireDefault(require("./apis/rich-menu-upload-request"));
 
@@ -27,7 +31,9 @@ const apis = {
   OAuthRevokeTokenRequest: _oauthRevokeTokenRequest.default,
   RichMenuAddRequest: _richMenuAddRequest.default,
   RichMenuListRequest: _richMenuListRequest.default,
+  RichMenuRemoveRequest: _richMenuRemoveRequest.default,
   RichMenuRequest: _richMenuRequest.default,
+  RichMenuSetDefaultRequest: _richMenuSetDefaultRequest.default,
   RichMenuUploadRequest: _richMenuUploadRequest.default
 };
 var _default = apis;
