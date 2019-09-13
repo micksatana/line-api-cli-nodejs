@@ -17,6 +17,8 @@ var _theme = _interopRequireDefault(require("../theme"));
 
 var _richmenuAddOperation = _interopRequireDefault(require("../operations/richmenu-add-operation"));
 
+var _richmenuSetDefaultOperation = _interopRequireDefault(require("../operations/richmenu-set-default-operation"));
+
 var _richmenuListOperation = _interopRequireDefault(require("../operations/richmenu-list-operation"));
 
 var _richmenuRemoveOperation = _interopRequireDefault(require("../operations/richmenu-remove-operation"));
@@ -77,6 +79,10 @@ class RichmenuCommand extends _command.default {
             console.log(commandLineUsage(_richmenuAddOperation.default.usage));
             break;
 
+          case 'default':
+            console.log(commandLineUsage(_richmenuSetDefaultOperation.default.usage));
+            break;
+
           case 'list':
             console.log(commandLineUsage(_richmenuListOperation.default.usage));
             break;
@@ -86,7 +92,7 @@ class RichmenuCommand extends _command.default {
             break;
 
           default:
-            console.log(commandLineUsage([..._richmenuAddOperation.default.usage, ..._richmenuListOperation.default.usage, ..._richmenuRemoveOperation.default.usage]));
+            console.log(commandLineUsage([..._richmenuAddOperation.default.usage, ..._richmenuListOperation.default.usage, ..._richmenuRemoveOperation.default.usage, ..._richmenuSetDefaultOperation.default.usage]));
         }
 
         process.exit(0);
@@ -102,6 +108,8 @@ class RichmenuCommand extends _command.default {
 
       if (operation === 'add') {
         await _richmenuAddOperation.default.run();
+      } else if (operation === 'default') {
+        await _richmenuSetDefaultOperation.default.run();
       } else if (operation === 'list') {
         await _richmenuListOperation.default.run();
       } else if (operation === 'remove') {
