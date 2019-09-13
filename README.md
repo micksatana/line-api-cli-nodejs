@@ -38,6 +38,23 @@ To revoke access token, run the following command.
 line token --revoke
 ```
 
+## Add a rich menu
+To add a rich menu, run the following command.
+```
+richmenu add
+```
+
+<img width="482" alt="sample-richmenu-add" src="https://user-images.githubusercontent.com/1315909/64861793-138ebb80-d65b-11e9-8881-b8aaaf185e93.png">
+
+## List rich menus
+To list rich menus, run the following command.
+```
+richmenu list
+```
+
+<img width="612" alt="sample-richmenu-list" src="https://user-images.githubusercontent.com/1315909/64861824-31f4b700-d65b-11e9-8367-2c782bb8c4c4.png">
+
+
 ## Comprehensive usage
 We provide comprehensive usage of each command / operation / option with CLI. Simply run a command with/without operation and follow by `--help` option. For example,
 ```
