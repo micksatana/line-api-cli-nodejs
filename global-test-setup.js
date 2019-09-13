@@ -4,6 +4,7 @@ import Operation from './lib/operations/operation';
 
 colors.setTheme(theme);
 
+// To make sure, not accidentally use real configuration during tests
 Operation._config = {
   channel: {
     id: 999999,
