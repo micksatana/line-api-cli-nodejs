@@ -1,3 +1,7 @@
+## [0.3.1]
+### Fixed
+ - Fixed missing `richmenu` CLI
+
 ## [0.3.0]
 ### Added
  - `richmenu list`
