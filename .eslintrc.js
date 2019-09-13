@@ -22,6 +22,7 @@ module.exports = {
             "always"
         ],
         "require-atomic-updates": 0,
-        "no-unused-vars": 0
+        "no-unused-vars": 0,
+        "no-empty": 0
     }
 };

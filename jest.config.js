@@ -2,6 +2,7 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: [
     'lib/**/*.{js,jsx}',
+    '!**/typedef/**',
     '!**/node_modules/**',
     '!**/__tests__/**',
     '!**/__mocks__/**'

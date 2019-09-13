@@ -18,7 +18,11 @@ class ImageHelper {
     const imagePath = _path.default.resolve(__dirname, `../assets/${imageName}.png`);
 
     console.log(_os.EOL);
-    await _terminalKit.terminal.drawImage(imagePath).catch(_ => {});
+
+    try {
+      await _terminalKit.terminal.drawImage(imagePath);
+    } catch (error) {}
+
     return;
   }
 

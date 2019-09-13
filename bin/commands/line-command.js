@@ -90,12 +90,14 @@ class LINECommand extends _command.default {
         }
 
         process.exit(0);
+        return;
       }
 
       if (options.version) {
         await _imageHelper.default.draw('chick-helps');
         console.log(this.versionText);
         process.exit(0);
+        return;
       }
 
       if (operation === 'init') {
@@ -112,6 +114,7 @@ class LINECommand extends _command.default {
       await _imageHelper.default.draw('chick-helps');
       console.error(error);
       process.exit(1);
+      return;
     }
   }
 

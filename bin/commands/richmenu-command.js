@@ -17,6 +17,8 @@ var _theme = _interopRequireDefault(require("../theme"));
 
 var _richmenuAddOperation = _interopRequireDefault(require("../operations/richmenu-add-operation"));
 
+var _richmenuListOperation = _interopRequireDefault(require("../operations/richmenu-list-operation"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class RichmenuCommand extends _command.default {
@@ -73,21 +75,29 @@ class RichmenuCommand extends _command.default {
             console.log(commandLineUsage(_richmenuAddOperation.default.usage));
             break;
 
+          case 'list':
+            console.log(commandLineUsage(_richmenuListOperation.default.usage));
+            break;
+
           default:
-            console.log(commandLineUsage([..._richmenuAddOperation.default.usage]));
+            console.log(commandLineUsage([..._richmenuAddOperation.default.usage, ..._richmenuListOperation.default.usage]));
         }
 
         process.exit(0);
+        return;
       }
 
       if (options.version) {
         await _imageHelper.default.draw('chick-helps');
         console.log(this.versionText);
         process.exit(0);
+        return;
       }
 
       if (operation === 'add') {
-        await _richmenuAddOperation.default.run(options);
+        await _richmenuAddOperation.default.run();
+      } else if (operation === 'list') {
+        await _richmenuListOperation.default.run();
       } else {
         await _imageHelper.default.draw('chick-helps');
         console.log(`Unknown operation: ${(operation || 'undefined').code}`.warn);
@@ -98,6 +108,7 @@ class RichmenuCommand extends _command.default {
       await _imageHelper.default.draw('chick-helps');
       console.error(error);
       process.exit(1);
+      return;
     }
   }
 

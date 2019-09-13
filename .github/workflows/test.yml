@@ -1,9 +1,6 @@
-name: Coverage
+name: Test
 
-on:
-  push:
-    branch:
-      - master
+on: [pull_request]
 
 jobs:
   build:
@@ -12,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [8.x, 10.x]
 
     steps:
     - uses: actions/checkout@v1
@@ -24,10 +21,6 @@ jobs:
       run: |
         npm install
         npm run build --if-present
-        npm run coverage
+        npm run test
       env:
         CI: true
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1.0.2
-      with:
-        token: ${{secrets.CODECOV_TOKEN}}
