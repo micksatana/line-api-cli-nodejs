@@ -55,6 +55,12 @@ richmenu list
 <img width="612" alt="sample-richmenu-list" src="https://user-images.githubusercontent.com/1315909/64861824-31f4b700-d65b-11e9-8367-2c782bb8c4c4.png">
 
 
+## Remove a rich menu
+To remove a rich menu, run the following command.
+```
+richmenu remove
+```
+
 ## Comprehensive usage
 We provide comprehensive usage of each command / operation / option with CLI. Simply run a command with/without operation and follow by `--help` option. For example,
 ```
