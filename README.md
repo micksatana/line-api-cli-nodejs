@@ -12,9 +12,10 @@ Command line interface for LINE APIs. This module will help you to easily work w
 
 ## Short summary
 
-LINE API CLI will help you work with your LINE-API-related projects faster. You do not need to switch between a web browser and IDE. You can focus working in your IDE with developer-friendly command line interface.
+LINE API CLI helps you to work with LINE-API-related projects faster as you do not need to switch between a web browser and IDE ( after your first-time setup :P ). If you already a hardcore "Terminal/Console" fanboy, it will reduce your time typing same long cURL commands to work with the APIs. You can focus working in your IDE with developer-friendly command line interface.
 
 ### Available commands, operations, and options
+
  - `line`
     - `init`
     - `token`
@@ -35,6 +36,7 @@ LINE API CLI will help you work with your LINE-API-related projects faster. You 
  - `things` (upcoming)
 
 ## Installation
+
 ```
 npm i @intocode-io/line-api-cli -g
 ```
@@ -42,15 +44,21 @@ npm i @intocode-io/line-api-cli -g
 <img width="414" alt="npm i @intocode-io/line-api-cli -g" src="https://user-images.githubusercontent.com/1315909/64685066-7e4fc380-d4b0-11e9-9c69-11f85fe6dd97.png">
 
 ## Project setup with `line` command
-To initialize project configuration file, run the following command.
+
+Let's start, to initialize project configuration file. Please go to your [LINE Developer Console](https://developers.line.biz/console/) and get Channel ID and Channel secret. If you do not want to issue a short-lived access token later on, you will also need a long-lived access token.
+
+Once you have the information, run `line` command with `init` operation.
+
 ```
 line init
 ```
-It will create `.line-api-cli.yml` configuration file containing necessary information for the CLI to handle API request/response for you.
+
+This command will create `.line-api-cli.yml` configuration file containing necessary information for the CLI to handle API request/response for you.
 
 <img width="507" alt="line init" src="https://user-images.githubusercontent.com/1315909/64685306-f28a6700-d4b0-11e9-94cc-dced718b1c9c.png">
 
 ### Issue a short-lived access token
+
 Long-lived access token is nice and easy to use for developers but it is not as secured as a short-lived access token.
 
 To issue a short-lived access token, run the following command.
@@ -67,7 +75,7 @@ Do not forget to replace a short-lived. It is recommended to write a script to r
 
 ### Revoke access token
 
-Ok, sometime you may feel insecure after exposing access token somewhere. No problem, you can revoke it by running this command.
+Ok, sometime you may feel insecure after exposing access token somewhere. No problem, you can revoke it with `--revoke` option.
 
 ```
 line token --revoke
@@ -79,7 +87,7 @@ It's time to display nice UI menu to your users, or maybe some menu to some spec
 
 ### Add a rich menu
 
-First you need to prepare a data file and an image file for rich menu. After you have those in your project directory, you can run the following command to add a rich menu.
+First you need to prepare a data file and an image file for rich menu. After you have those in your project directory, you can run `richmenu` command with `add` operation to add a rich menu.
 
 ```
 richmenu add
@@ -138,8 +146,7 @@ line --help
 
 <img width="680" alt="line --help" src="https://user-images.githubusercontent.com/1315909/64685826-d20edc80-d4b1-11e9-82fc-596009d85a87.png">
 
-## License
-MIT License
+## MIT License
 
 Copyright (c) 2019 intocode Co., Ltd.
 
