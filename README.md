@@ -27,8 +27,8 @@ LINE API CLI helps you to work with LINE-API-related projects faster as you do n
     - `default`
     - `link`
     - `unlink`
- - `liff` (upcoming)
-    - `add` (upcoming)
+ - `liff`
+    - `add`
     - `remove` (upcoming)
     - `update` (upcoming)
     - `list` (upcoming)

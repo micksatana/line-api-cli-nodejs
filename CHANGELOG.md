@@ -1,3 +1,7 @@
+## [0.7.0]
+### Added
+ - `liff add`
+
 ## [0.6.0]
 ### Added
  - `richmenu link`
