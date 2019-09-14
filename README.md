@@ -140,6 +140,18 @@ Rich menu can be unlinked from a specific user using `unlink` operation.
 richmenu unlink
 ```
 
+## Working with LIFF app using `liff` command
+
+To develop more advanced LINE Bot, LIFF app may required. You can use `liff` command to manage LIFF apps.
+
+### Add a LIFF view
+
+```
+liff add
+```
+
+<img width="640" alt="liff add" src="https://user-images.githubusercontent.com/1315909/64910629-a3f3fb80-d742-11e9-94a7-600d5db096e2.gif">
+
 ## Comprehensive usage
 
 We provide comprehensive usage of each command / operation / option with CLI. Simply run a command with/without operation and follow by `--help` option. For example,

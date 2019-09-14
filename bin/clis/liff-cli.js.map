@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../lib/clis/liff-cli.js"],"names":["LIFFCommand","cli"],"mappings":"AAAA;;;AACA;;;;AAEAA,qBAAYC,GAAZ","sourcesContent":["#!/usr/bin/env node\nimport LIFFCommand from '../commands/liff-command';\n\nLIFFCommand.cli();\n"],"file":"liff-cli.js"}
