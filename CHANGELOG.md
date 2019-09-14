@@ -2,6 +2,7 @@
 ### Added
  - `liff add`
  - `liff list`
+ - `liff remove`
 
 ## [0.6.0]
 ### Added
