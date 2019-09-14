@@ -7,12 +7,11 @@
 ![NPM](https://img.shields.io/npm/l/@intocode-io/line-api-cli)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/micksatana?locale.x=en_GB)
 
-
 Command line interface for LINE APIs. This module will help you to easily work with LINE APIs via CLI.
 
 ## Short summary
 
-LINE API CLI helps you to work with LINE-API-related projects faster as you do not need to switch between a web browser and IDE ( after your first-time setup :P ). If you already a hardcore "Terminal/Console" fanboy, it will reduce your time typing same long cURL commands to work with the APIs. You can focus working in your IDE with developer-friendly command line interface.
+LINE API CLI helps you to work with LINE-API-related projects faster as you do not need to switch between a web browser and IDE ( after your first-time setup :P ). If you already are a hardcore "Terminal/Console" fanboy that using cURL to work with LINE APIs, using this package will reduce your time typing same long API cURL commands.
 
 ### Available commands, operations, and options
 
@@ -27,7 +26,7 @@ LINE API CLI helps you to work with LINE-API-related projects faster as you do n
     - `list`
     - `default`
     - `link`
-    - `unlink` (upcoming)
+    - `unlink`
  - `liff` (upcoming)
     - `add` (upcoming)
     - `remove` (upcoming)
@@ -131,6 +130,14 @@ Rich menu can be linked to a specific user. For example, if you want a rich menu
 
 ```
 richmenu link
+```
+
+### Unlink a rich menu from a user
+
+Rich menu can be unlinked from a specific user using `unlink` operation.
+
+```
+richmenu unlink
 ```
 
 ## Comprehensive usage

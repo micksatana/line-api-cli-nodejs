@@ -17,13 +17,15 @@ var _theme = _interopRequireDefault(require("../theme"));
 
 var _richmenuAddOperation = _interopRequireDefault(require("../operations/richmenu-add-operation"));
 
-var _richmenuSetDefaultOperation = _interopRequireDefault(require("../operations/richmenu-set-default-operation"));
+var _richmenuLinkOperation = _interopRequireDefault(require("../operations/richmenu-link-operation"));
 
 var _richmenuListOperation = _interopRequireDefault(require("../operations/richmenu-list-operation"));
 
 var _richmenuRemoveOperation = _interopRequireDefault(require("../operations/richmenu-remove-operation"));
 
-var _richmenuLinkOperation = _interopRequireDefault(require("../operations/richmenu-link-operation"));
+var _richmenuSetDefaultOperation = _interopRequireDefault(require("../operations/richmenu-set-default-operation"));
+
+var _richmenuUnlinkOperation = _interopRequireDefault(require("../operations/richmenu-unlink-operation"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -97,8 +99,12 @@ class RichmenuCommand extends _command.default {
             console.log(commandLineUsage(_richmenuRemoveOperation.default.usage));
             break;
 
+          case 'unlink':
+            console.log(commandLineUsage(_richmenuUnlinkOperation.default.usage));
+            break;
+
           default:
-            console.log(commandLineUsage([..._richmenuAddOperation.default.usage, ..._richmenuListOperation.default.usage, ..._richmenuRemoveOperation.default.usage, ..._richmenuSetDefaultOperation.default.usage, ..._richmenuLinkOperation.default.usage]));
+            console.log(commandLineUsage([..._richmenuAddOperation.default.usage, ..._richmenuListOperation.default.usage, ..._richmenuRemoveOperation.default.usage, ..._richmenuSetDefaultOperation.default.usage, ..._richmenuLinkOperation.default.usage, ..._richmenuUnlinkOperation.default.usage]));
         }
 
         process.exit(0);
@@ -116,12 +122,14 @@ class RichmenuCommand extends _command.default {
         await _richmenuAddOperation.default.run();
       } else if (operation === 'default') {
         await _richmenuSetDefaultOperation.default.run();
-      } else if (operation === 'list') {
-        await _richmenuListOperation.default.run();
       } else if (operation === 'link') {
         await _richmenuLinkOperation.default.run();
+      } else if (operation === 'list') {
+        await _richmenuListOperation.default.run();
       } else if (operation === 'remove') {
         await _richmenuRemoveOperation.default.run();
+      } else if (operation === 'unlink') {
+        await _richmenuUnlinkOperation.default.run();
       } else {
         await _imageHelper.default.draw('chick-helps');
         console.log(`Unknown operation: ${(operation || 'undefined').code}`.warn);
