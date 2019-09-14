@@ -27,7 +27,7 @@ LINE API CLI helps you to work with LINE-API-related projects faster as you do n
     - `list`
     - `default`
     - `link`
-    - `unlink` (upcoming)
+    - `unlink`
  - `liff` (upcoming)
     - `add` (upcoming)
     - `remove` (upcoming)
@@ -131,6 +131,14 @@ Rich menu can be linked to a specific user. For example, if you want a rich menu
 
 ```
 richmenu link
+```
+
+### Unlink a rich menu from a user
+
+Rich menu can be unlinked from a specific user using `unlink` operation.
+
+```
+richmenu unlink
 ```
 
 ## Comprehensive usage
