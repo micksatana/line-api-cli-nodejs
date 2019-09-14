@@ -23,6 +23,8 @@ var _richmenuListOperation = _interopRequireDefault(require("../operations/richm
 
 var _richmenuRemoveOperation = _interopRequireDefault(require("../operations/richmenu-remove-operation"));
 
+var _richmenuLinkOperation = _interopRequireDefault(require("../operations/richmenu-link-operation"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class RichmenuCommand extends _command.default {
@@ -83,6 +85,10 @@ class RichmenuCommand extends _command.default {
             console.log(commandLineUsage(_richmenuSetDefaultOperation.default.usage));
             break;
 
+          case 'link':
+            console.log(commandLineUsage(_richmenuLinkOperation.default.usage));
+            break;
+
           case 'list':
             console.log(commandLineUsage(_richmenuListOperation.default.usage));
             break;
@@ -92,7 +98,7 @@ class RichmenuCommand extends _command.default {
             break;
 
           default:
-            console.log(commandLineUsage([..._richmenuAddOperation.default.usage, ..._richmenuListOperation.default.usage, ..._richmenuRemoveOperation.default.usage, ..._richmenuSetDefaultOperation.default.usage]));
+            console.log(commandLineUsage([..._richmenuAddOperation.default.usage, ..._richmenuListOperation.default.usage, ..._richmenuRemoveOperation.default.usage, ..._richmenuSetDefaultOperation.default.usage, ..._richmenuLinkOperation.default.usage]));
         }
 
         process.exit(0);
@@ -112,6 +118,8 @@ class RichmenuCommand extends _command.default {
         await _richmenuSetDefaultOperation.default.run();
       } else if (operation === 'list') {
         await _richmenuListOperation.default.run();
+      } else if (operation === 'link') {
+        await _richmenuLinkOperation.default.run();
       } else if (operation === 'remove') {
         await _richmenuRemoveOperation.default.run();
       } else {

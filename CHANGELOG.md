@@ -1,6 +1,8 @@
 ## [0.6.0]
 ### Added
  - `richmenu link`
+### Changed
+ - Re-arrange columns in `richmenu list` and add `name` column
 
 ## [0.5.0]
 ### Added
