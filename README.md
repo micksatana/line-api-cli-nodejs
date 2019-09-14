@@ -31,7 +31,7 @@ LINE API CLI helps you to work with LINE-API-related projects faster as you do n
     - `add`
     - `remove` (upcoming)
     - `update` (upcoming)
-    - `list` (upcoming)
+    - `list`
  - `things` (upcoming)
 
 ## Installation
@@ -144,13 +144,19 @@ richmenu unlink
 
 To develop more advanced LINE Bot, LIFF app may required. You can use `liff` command to manage LIFF apps.
 
-### Add a LIFF view
+### Add a LIFF app
 
 ```
 liff add
 ```
 
 <img width="640" alt="liff add" src="https://user-images.githubusercontent.com/1315909/64910629-a3f3fb80-d742-11e9-94a7-600d5db096e2.gif">
+
+### List LIFF apps
+
+```
+liff list
+```
 
 ## Comprehensive usage
 

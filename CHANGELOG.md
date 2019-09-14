@@ -1,6 +1,7 @@
 ## [0.7.0]
 ### Added
  - `liff add`
+ - `liff list`
 
 ## [0.6.0]
 ### Added
