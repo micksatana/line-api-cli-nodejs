@@ -15,6 +15,8 @@ var _imageHelper = _interopRequireDefault(require("../image-helper"));
 
 var _liffAddOperation = _interopRequireDefault(require("../operations/liff-add-operation"));
 
+var _liffListOperation = _interopRequireDefault(require("../operations/liff-list-operation"));
+
 var _theme = _interopRequireDefault(require("../theme"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -73,6 +75,10 @@ class LIFFCommand extends _command.default {
             console.log(commandLineUsage(_liffAddOperation.default.usage));
             break;
 
+          case 'list':
+            console.log(commandLineUsage(_liffListOperation.default.usage));
+            break;
+
           default:
             console.log(commandLineUsage([..._liffAddOperation.default.usage]));
         }
@@ -90,6 +96,8 @@ class LIFFCommand extends _command.default {
 
       if (operation === 'add') {
         await _liffAddOperation.default.run(options);
+      } else if (operation === 'list') {
+        await _liffListOperation.default.run(options);
       } else {
         await _imageHelper.default.draw('chick-helps');
         console.log(`Unknown operation: ${(operation || 'undefined').code}`.warn);
