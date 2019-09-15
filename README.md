@@ -29,8 +29,8 @@ LINE API CLI helps you to work with LINE-API-related projects faster as you do n
     - `unlink`
  - `liff`
     - `add`
-    - `remove` (upcoming)
-    - `update` (upcoming)
+    - `remove`
+    - `update`
     - `list`
  - `things` (upcoming)
 
@@ -156,6 +156,12 @@ liff add
 
 ```
 liff list
+```
+
+### Remove a LIFF app
+
+```
+liff remove
 ```
 
 ## Comprehensive usage

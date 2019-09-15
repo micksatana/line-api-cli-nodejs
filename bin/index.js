@@ -5,6 +5,14 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _liffAddRequest = _interopRequireDefault(require("./apis/liff-add-request"));
+
+var _liffListRequest = _interopRequireDefault(require("./apis/liff-list-request"));
+
+var _liffRemoveRequest = _interopRequireDefault(require("./apis/liff-remove-request"));
+
+var _liffRequest = _interopRequireDefault(require("./apis/liff-request"));
+
 var _oauthIssueTokenRequest = _interopRequireDefault(require("./apis/oauth-issue-token-request"));
 
 var _oauthRequest = _interopRequireDefault(require("./apis/oauth-request"));
@@ -26,6 +34,10 @@ var _richMenuUploadRequest = _interopRequireDefault(require("./apis/rich-menu-up
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const apis = {
+  LIFFAddRequest: _liffAddRequest.default,
+  LIFFListRequest: _liffListRequest.default,
+  LIFFRemoveRequest: _liffRemoveRequest.default,
+  LIFFRequest: _liffRequest.default,
   OAuthIssueTokenRequest: _oauthIssueTokenRequest.default,
   OAuthRequest: _oauthRequest.default,
   OAuthRevokeTokenRequest: _oauthRevokeTokenRequest.default,
