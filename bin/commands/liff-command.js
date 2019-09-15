@@ -86,7 +86,7 @@ class LIFFCommand extends _command.default {
             break;
 
           default:
-            console.log(commandLineUsage([..._liffAddOperation.default.usage]));
+            console.log(commandLineUsage([..._liffAddOperation.default.usage, ..._liffListOperation.default.usage, ..._liffRemoveOperation.default.usage]));
         }
 
         process.exit(0);
