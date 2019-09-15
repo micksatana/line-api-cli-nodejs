@@ -34,8 +34,6 @@ class LIFFRemoveOperation extends _operation.default {
       return false;
     }
 
-    const prompts = require('prompts');
-
     let apps = [];
 
     try {
@@ -58,6 +56,9 @@ class LIFFRemoveOperation extends _operation.default {
         value: app.liffId
       };
     });
+
+    const prompts = require('prompts');
+
     const {
       liffId
     } = await prompts({

@@ -19,6 +19,8 @@ var _liffListOperation = _interopRequireDefault(require("../operations/liff-list
 
 var _liffRemoveOperation = _interopRequireDefault(require("../operations/liff-remove-operation"));
 
+var _liffUpdateOperation = _interopRequireDefault(require("../operations/liff-update-operation"));
+
 var _theme = _interopRequireDefault(require("../theme"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -85,8 +87,12 @@ class LIFFCommand extends _command.default {
             console.log(commandLineUsage(_liffRemoveOperation.default.usage));
             break;
 
+          case 'update':
+            console.log(commandLineUsage(_liffUpdateOperation.default.usage));
+            break;
+
           default:
-            console.log(commandLineUsage([..._liffAddOperation.default.usage, ..._liffListOperation.default.usage, ..._liffRemoveOperation.default.usage]));
+            console.log(commandLineUsage([..._liffAddOperation.default.usage, ..._liffListOperation.default.usage, ..._liffRemoveOperation.default.usage, ..._liffUpdateOperation.default.usage]));
         }
 
         process.exit(0);
@@ -106,6 +112,8 @@ class LIFFCommand extends _command.default {
         await _liffListOperation.default.run(options);
       } else if (operation === 'remove') {
         await _liffRemoveOperation.default.run(options);
+      } else if (operation === 'update') {
+        await _liffUpdateOperation.default.run(options);
       } else {
         await _imageHelper.default.draw('chick-helps');
         console.log(`Unknown operation: ${(operation || 'undefined').code}`.warn);
