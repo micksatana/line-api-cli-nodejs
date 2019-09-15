@@ -8,6 +8,8 @@ require("./liff-app-data");
 
 require("./liff-list-response-data");
 
+require("./liff-update-request-data");
+
 require("./line-command-options");
 
 require("./rich-menu-area-data");

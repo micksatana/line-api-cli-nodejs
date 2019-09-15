@@ -3,6 +3,7 @@
 ## [1.0.0]
 ### Added
  - `liff remove`
+ - `liff update`
 
 ## [0.7.0]
 ### Added
