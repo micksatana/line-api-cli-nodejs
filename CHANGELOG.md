@@ -1,8 +1,13 @@
+# Changelog
+
+## [1.0.0]
+### Added
+ - `liff remove`
+
 ## [0.7.0]
 ### Added
  - `liff add`
  - `liff list`
- - `liff remove`
 
 ## [0.6.0]
 ### Added
