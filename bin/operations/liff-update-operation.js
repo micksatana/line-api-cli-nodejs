@@ -71,6 +71,11 @@ class LIFFUpdateOperation extends _operation.default {
       message: 'Select a LIFF app to be updated',
       choices
     }, this.cancelOption);
+
+    if (!app) {
+      return false;
+    }
+
     const viewTypes = [{
       title: 'compact',
       description: '50% of device screen height',
