@@ -1,9 +1,19 @@
 #!/usr/bin/env node
 "use strict";
 
-var _liffCommand = _interopRequireDefault(require("../commands/liff-command"));
+var _colors = _interopRequireDefault(require("colors"));
+
+var _operation = _interopRequireDefault(require("../operations/operation"));
+
+var _theme = _interopRequireDefault(require("../theme"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_liffCommand.default.cli();
+_colors.default.setTheme(_theme.default);
+
+if (_operation.default.config) {
+  const LIFFCommand = require('../commands/liff-command').default;
+
+  LIFFCommand.cli();
+}
 //# sourceMappingURL=liff-cli.js.map
