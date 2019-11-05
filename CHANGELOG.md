@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.1.0]
+### Added
+ - `things list:trial`
+ - `things remove:trial`
+
 ## [1.0.0]
 ### Added
  - `liff remove`

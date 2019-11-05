@@ -11,18 +11,18 @@ var _commandLineUsage = require("command-line-usage");
 
 var _operation = _interopRequireDefault(require("./operation"));
 
-var _thingsGetTrialProductsRequest = _interopRequireDefault(require("../apis/things-get-trial-products-request"));
+var _thingsListTrialProductsRequest = _interopRequireDefault(require("../apis/things-list-trial-products-request"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-class ThingsGetTrialOperation extends _operation.default {
+class ThingsListTrialOperation extends _operation.default {
   static get usage() {
     /** @type {Section[]} */
     const sections = [{
-      header: 'Get trial products'.help,
-      content: `things get:trial`.code
+      header: 'List trial products'.help,
+      content: `things list:trial`.code
     }];
     return sections;
   }
@@ -35,7 +35,7 @@ class ThingsGetTrialOperation extends _operation.default {
     let trialProducts;
 
     try {
-      const response = await this.getRequest.send();
+      const response = await this.listRequest.send();
       trialProducts = response.data;
     } catch (error) {
       console.error(error);
@@ -64,9 +64,9 @@ class ThingsGetTrialOperation extends _operation.default {
 
 }
 
-exports.default = ThingsGetTrialOperation;
+exports.default = ThingsListTrialOperation;
 
-_defineProperty(ThingsGetTrialOperation, "getRequest", new _thingsGetTrialProductsRequest.default({
-  accessToken: ThingsGetTrialOperation.config.channel.accessToken
+_defineProperty(ThingsListTrialOperation, "listRequest", new _thingsListTrialProductsRequest.default({
+  accessToken: ThingsListTrialOperation.config.channel.accessToken
 }));
-//# sourceMappingURL=things-get-trial-operation.js.map
+//# sourceMappingURL=things-list-trial-operation.js.map
