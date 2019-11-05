@@ -6,7 +6,8 @@
   "bin": {
     "line": "bin/clis/line-cli.js",
     "richmenu": "bin/clis/richmenu-cli.js",
-    "liff": "bin/clis/liff-cli.js"
+    "liff": "bin/clis/liff-cli.js",
+    "things": "bin/clis/things-cli.js"
   },
   "scripts": {
     "build": "npm run clean && npm run build:babel && npm run chmod:clis",
