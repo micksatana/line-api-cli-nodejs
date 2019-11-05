@@ -31,6 +31,12 @@ var _richMenuSetDefaultRequest = _interopRequireDefault(require("./apis/rich-men
 
 var _richMenuUploadRequest = _interopRequireDefault(require("./apis/rich-menu-upload-request"));
 
+var _thingsListTrialProductsRequest = _interopRequireDefault(require("./apis/things-list-trial-products-request"));
+
+var _thingsRemoveTrialProductRequest = _interopRequireDefault(require("./apis/things-remove-trial-product-request"));
+
+var _thingsRequest = _interopRequireDefault(require("./apis/things-request"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const apis = {
@@ -46,7 +52,10 @@ const apis = {
   RichMenuRemoveRequest: _richMenuRemoveRequest.default,
   RichMenuRequest: _richMenuRequest.default,
   RichMenuSetDefaultRequest: _richMenuSetDefaultRequest.default,
-  RichMenuUploadRequest: _richMenuUploadRequest.default
+  RichMenuUploadRequest: _richMenuUploadRequest.default,
+  ThingsListTrialProductsRequest: _thingsListTrialProductsRequest.default,
+  ThingsRemoveTrialProductRequest: _thingsRemoveTrialProductRequest.default,
+  ThingsRequest: _thingsRequest.default
 };
 var _default = apis;
 exports.default = _default;

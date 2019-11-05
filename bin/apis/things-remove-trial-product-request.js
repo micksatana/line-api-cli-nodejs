@@ -9,17 +9,22 @@ var _thingsRequest = _interopRequireDefault(require("./things-request"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-class ThingsGetTrialProductsRequest extends _thingsRequest.default {
+class ThingsRemoveTrialProductRequest extends _thingsRequest.default {
   constructor(options) {
     super(options);
     this.endpoint = `${this.endpoint}/trial/products`;
   }
+  /**
+   *
+   * @param {string} productId Product ID
+   */
 
-  send() {
-    return this.axios.get(this.endpoint);
+
+  send(productId) {
+    return this.axios.delete(`${this.endpoint}/${productId}`);
   }
 
 }
 
-exports.default = ThingsGetTrialProductsRequest;
-//# sourceMappingURL=things-get-trial-products-request.js.map
+exports.default = ThingsRemoveTrialProductRequest;
+//# sourceMappingURL=things-remove-trial-product-request.js.map

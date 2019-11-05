@@ -170,6 +170,20 @@ liff remove
 liff update
 ```
 
+## Working with LINE Things using `things` command
+
+### List all LINE Things trial products
+
+```
+things list:trial
+```
+
+### Remove a trial product
+
+```
+things remove:trial
+```
+
 ## Comprehensive usage
 
 We provide comprehensive usage of each command / operation / option with CLI. Simply run a command with/without operation and follow by `--help` option. For example,

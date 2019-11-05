@@ -15,7 +15,9 @@ var _imageHelper = _interopRequireDefault(require("../image-helper"));
 
 var _theme = _interopRequireDefault(require("../theme"));
 
-var _thingsGetTrialOperation = _interopRequireDefault(require("../operations/things-get-trial-operation"));
+var _thingsListTrialOperation = _interopRequireDefault(require("../operations/things-list-trial-operation"));
+
+var _thingsRemoveTrialOperation = _interopRequireDefault(require("../operations/things-remove-trial-operation"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -69,8 +71,16 @@ class ThingsCommand extends _command.default {
         await _imageHelper.default.draw('chick-helps');
 
         switch (operation) {
+          case 'list:trial':
+            console.log(commandLineUsage(_thingsListTrialOperation.default.usage));
+            break;
+
+          case 'remove:trial':
+            console.log(commandLineUsage(_thingsRemoveTrialOperation.default.usage));
+            break;
+
           default:
-            console.log(commandLineUsage([..._thingsGetTrialOperation.default.usage]));
+            console.log(commandLineUsage([..._thingsListTrialOperation.default.usage, ..._thingsRemoveTrialOperation.default.usage]));
         }
 
         process.exit(0);
@@ -84,8 +94,10 @@ class ThingsCommand extends _command.default {
         return;
       }
 
-      if (operation === 'get:trial') {
-        await _thingsGetTrialOperation.default.run();
+      if (operation === 'list:trial') {
+        await _thingsListTrialOperation.default.run();
+      } else if (operation === 'remove:trial') {
+        await _thingsRemoveTrialOperation.default.run();
       } else {
         await _imageHelper.default.draw('chick-helps');
         console.log(`Unknown operation: ${(operation || 'undefined').code}`.warn);
