@@ -1,12 +1,13 @@
 {
   "name": "@intocode-io/line-api-cli",
-  "version": "1.0.0",
+  "version": "1.1.0-alpha.0",
   "description": "LINE API CLIs for Node.js",
   "main": "lib/index.js",
   "bin": {
     "line": "bin/clis/line-cli.js",
     "richmenu": "bin/clis/richmenu-cli.js",
-    "liff": "bin/clis/liff-cli.js"
+    "liff": "bin/clis/liff-cli.js",
+    "things": "bin/clis/things-cli.js"
   },
   "scripts": {
     "build": "npm run clean && npm run build:babel && npm run chmod:clis",
