@@ -3,6 +3,7 @@
 ## [1.1.0]
 ### Added
  - `things list:trial`
+ - `things add:trial`
  - `things remove:trial`
 
 ## [1.0.0]

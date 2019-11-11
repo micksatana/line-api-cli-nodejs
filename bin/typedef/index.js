@@ -19,4 +19,6 @@ require("./rich-menu-data");
 require("./richmenu-command-options");
 
 require("./richmenu-list-response-data");
+
+require("./trial-product-data");
 //# sourceMappingURL=index.js.map

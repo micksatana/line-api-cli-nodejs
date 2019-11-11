@@ -9,7 +9,7 @@ require("console.table");
 
 var _commandLineUsage = require("command-line-usage");
 
-var _operation = _interopRequireDefault(require("./operation"));
+var _thingsOperation = _interopRequireDefault(require("./things-operation"));
 
 var _thingsListTrialProductsRequest = _interopRequireDefault(require("../apis/things-list-trial-products-request"));
 
@@ -17,7 +17,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-class ThingsListTrialOperation extends _operation.default {
+class ThingsListTrialOperation extends _thingsOperation.default {
   static get usage() {
     /** @type {Section[]} */
     const sections = [{
@@ -43,17 +43,7 @@ class ThingsListTrialOperation extends _operation.default {
     }
 
     if (trialProducts && trialProducts.length) {
-      console.table(trialProducts.map(product => {
-        const row = {};
-        row['ID'.success] = product.id;
-        row['Name'.success] = product.name;
-        row['Type'.success] = product.type;
-        row['Channel ID'.success] = product.channelId;
-        row['Service UUID'.success] = product.serviceUuid;
-        row['PSDI Service UUID'.success] = product.psdiServiceUuid;
-        row['PSDI Characteristic UUID'.success] = product.psdiCharacteristicUuid;
-        return row;
-      }));
+      console.table(_thingsOperation.default.productsToTableData(trialProducts));
     } else {
       console.log('Trial product not found'.info);
       return true;
