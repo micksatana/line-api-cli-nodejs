@@ -178,6 +178,12 @@ liff update
 things list:trial
 ```
 
+### Add a trial product
+
+```
+things add:trial
+```
+
 ### Remove a trial product
 
 ```
