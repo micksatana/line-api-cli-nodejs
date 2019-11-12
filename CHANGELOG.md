@@ -5,6 +5,7 @@
  - `things list:trial`
  - `things add:trial`
  - `things remove:trial`
+ - `things get:device` Get device information by device ID and user ID
 
 ## [1.0.0]
 ### Added

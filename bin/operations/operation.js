@@ -66,6 +66,16 @@ class Operation {
     }
   }
 
+  static logAxiosError(error) {
+    if (error.isAxiosError) {
+      console.log(`${error.response.status}, ${error.response.statusText}`.error);
+    } else {
+      console.log(error.message.error);
+    }
+
+    return;
+  }
+
 }
 
 exports.default = Operation;

@@ -190,6 +190,12 @@ things add:trial
 things remove:trial
 ```
 
+### Get device information by device ID and user ID
+
+```
+things get:device
+```
+
 ## Comprehensive usage
 
 We provide comprehensive usage of each command / operation / option with CLI. Simply run a command with/without operation and follow by `--help` option. For example,
