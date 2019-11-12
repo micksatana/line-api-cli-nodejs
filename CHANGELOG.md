@@ -6,6 +6,7 @@
  - `things add:trial`
  - `things remove:trial`
  - `things get:device` Get device information by device ID and user ID
+ - `things get:product` Specify the device ID, and acquire the product ID and PSDI
 
 ## [1.0.0]
 ### Added
