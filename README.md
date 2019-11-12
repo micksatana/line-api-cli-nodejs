@@ -32,7 +32,14 @@ LINE API CLI helps you to work with LINE-API-related projects faster as you do n
     - `remove`
     - `update`
     - `list`
- - `things` (upcoming)
+ - `things`
+    - `add:trial`
+    - `remove:trial`
+    - `list:trial`
+    - `get:device`
+    - `get:devices`
+    - `get:product`
+    - (Upcoming features in v1.2.0) Scenario management API for automatic communication
 
 ## Installation
 
@@ -194,6 +201,12 @@ things remove:trial
 
 ```
 things get:device
+```
+
+### Specify the product ID and user ID, and acquire the device information
+
+```
+things get:devices
 ```
 
 ### Specify the device ID, and acquire the product ID and PSDI
