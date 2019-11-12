@@ -75,6 +75,11 @@ class ThingsAddTrialOperation extends _thingsOperation.default {
       message: 'Product name?'
     }, this.cancelOption);
 
+    if (!productName) {
+      console.log('Product name cannot be empty'.error);
+      return false;
+    }
+
     try {
       const response = await this.addRequest.send(liffId, productName);
       console.table(_thingsOperation.default.productsToTableData([response.data]));
