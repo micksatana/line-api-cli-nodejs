@@ -196,6 +196,12 @@ things remove:trial
 things get:device
 ```
 
+### Specify the device ID, and acquire the product ID and PSDI
+
+```
+things get:product
+```
+
 ## Comprehensive usage
 
 We provide comprehensive usage of each command / operation / option with CLI. Simply run a command with/without operation and follow by `--help` option. For example,
