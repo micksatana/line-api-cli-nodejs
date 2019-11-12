@@ -9,7 +9,7 @@ require("console.table");
 
 var _commandLineUsage = require("command-line-usage");
 
-var _operation = _interopRequireDefault(require("./operation"));
+var _thingsOperation = _interopRequireDefault(require("./things-operation"));
 
 var _thingsListTrialProductsRequest = _interopRequireDefault(require("../apis/things-list-trial-products-request"));
 
@@ -19,7 +19,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-class ThingsRemoveTrialOperation extends _operation.default {
+class ThingsRemoveTrialOperation extends _thingsOperation.default {
   static get usage() {
     /** @type {Section[]} */
     const sections = [{
