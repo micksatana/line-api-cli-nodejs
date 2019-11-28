@@ -27,4 +27,6 @@ require("./scenario");
 require("./trial-product-data");
 
 require("./update-product-scenario-set-request-data");
+
+require("./update-product-scenario-set-response-data");
 //# sourceMappingURL=index.js.map
