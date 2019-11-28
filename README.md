@@ -39,7 +39,7 @@ LINE API CLI helps you to work with LINE-API-related projects faster as you do n
     - `get:device`
     - `get:devices`
     - `get:product`
-    - (Upcoming features in v1.2.0) Scenario management API for automatic communication
+    - `register:scenarios`
 
 ## Installation
 
@@ -213,6 +213,14 @@ things get:devices
 
 ```
 things get:product
+```
+
+## Scenario management API for automatic communication
+
+### Register (create or update) a scenario set for automatic communication under a product
+
+```
+things register:scenarios
 ```
 
 ## Comprehensive usage

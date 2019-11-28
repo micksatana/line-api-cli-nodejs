@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.2.0]
+ - `things register:scenarios` Register (create or update) a scenario set for automatic communication under a product.
+
 ## [1.1.0]
 ### Added
  - `things list:trial`
