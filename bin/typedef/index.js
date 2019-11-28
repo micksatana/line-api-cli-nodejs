@@ -20,5 +20,11 @@ require("./richmenu-command-options");
 
 require("./richmenu-list-response-data");
 
+require("./scenario-action");
+
+require("./scenario");
+
 require("./trial-product-data");
+
+require("./update-product-scenario-set-request-data");
 //# sourceMappingURL=index.js.map
