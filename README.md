@@ -14,12 +14,13 @@ Command line interface for LINE APIs. This module will help you to easily work w
 LINE API CLI helps you to work with LINE-API-related projects faster as you do not need to switch between a web browser and IDE ( after your first-time setup :P ). If you already are a hardcore "Terminal/Console" fanboy that using cURL to work with LINE APIs, using this package will reduce your time typing same long API cURL commands.
 
 ### Available commands, operations, and options
-
+#### LINE API configuration and token management
  - `line`
     - `init`
     - `token`
       - `--issue`
       - `--revoke`
+#### Richmenu API
  - `richmenu`
     - `add`
     - `remove`
@@ -27,11 +28,13 @@ LINE API CLI helps you to work with LINE-API-related projects faster as you do n
     - `default`
     - `link`
     - `unlink`
+#### LIFF API v1
  - `liff`
     - `add`
     - `remove`
     - `update`
     - `list`
+#### LINE Things API
  - `things`
     - `add:trial`
     - `remove:trial`
@@ -39,8 +42,11 @@ LINE API CLI helps you to work with LINE-API-related projects faster as you do n
     - `get:device`
     - `get:devices`
     - `get:product`
-    - `register:scenario-set`
-    - `get:scenario-set`
+#### Scenario management API for automatic communication
+ - `things`
+   - `register:scenario-set`
+   - `remove:scenario-set`
+   - `get:scenario-set`
 
 ## Installation
 
@@ -228,6 +234,12 @@ things register:scenario-set
 
 ```
 things get:scenario-set
+```
+
+### Delete a scenario set registered under a product
+
+```
+things remove:scenario-set
 ```
 
 ## Comprehensive usage

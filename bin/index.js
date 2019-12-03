@@ -39,7 +39,11 @@ var _thingsGetDeviceRequest = _interopRequireDefault(require("./apis/things-get-
 
 var _thingsGetDevicesByProductUserRequest = _interopRequireDefault(require("./apis/things-get-devices-by-product-user-request"));
 
+var _thingsGetProductScenarioSetRequest = _interopRequireDefault(require("./apis/things-get-product-scenario-set-request"));
+
 var _thingsListTrialProductsRequest = _interopRequireDefault(require("./apis/things-list-trial-products-request"));
+
+var _thingsRemoveProductScenarioSetRequest = _interopRequireDefault(require("./apis/things-remove-product-scenario-set-request"));
 
 var _thingsRemoveTrialProductRequest = _interopRequireDefault(require("./apis/things-remove-trial-product-request"));
 
@@ -67,7 +71,9 @@ const apis = {
   ThingsGetDeviceByDeviceUserRequest: _thingsGetDeviceByDeviceUserRequest.default,
   ThingsGetDeviceRequest: _thingsGetDeviceRequest.default,
   ThingsGetDevicesByProductUserRequest: _thingsGetDevicesByProductUserRequest.default,
+  ThingsGetProductScenarioSetRequest: _thingsGetProductScenarioSetRequest.default,
   ThingsListTrialProductsRequest: _thingsListTrialProductsRequest.default,
+  ThingsRemoveProductScenarioSetRequest: _thingsRemoveProductScenarioSetRequest.default,
   ThingsRemoveTrialProductRequest: _thingsRemoveTrialProductRequest.default,
   ThingsRequest: _thingsRequest.default,
   ThingsUpdateProductScenarioSetRequest: _thingsUpdateProductScenarioSetRequest.default
