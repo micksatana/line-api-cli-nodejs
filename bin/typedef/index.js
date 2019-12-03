@@ -2,6 +2,8 @@
 
 require("./config");
 
+require("./get-product-scenario-set-response-data");
+
 require("./issued-token-data");
 
 require("./liff-app-data");
@@ -11,6 +13,8 @@ require("./liff-list-response-data");
 require("./liff-update-request-data");
 
 require("./line-command-options");
+
+require("./product-scenario-set-data");
 
 require("./rich-menu-area-data");
 

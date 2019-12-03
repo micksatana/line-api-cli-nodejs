@@ -1,7 +1,8 @@
 # Changelog
 
 ## [1.2.0]
- - `things register:scenarios` Register (create or update) a scenario set for automatic communication under a product.
+ - `things register:scenario-set` Register (create or update) a scenario set for automatic communication under a product.
+ - `things get:scenario-set` Get the scenario set registered under a product.
 
 ## [1.1.0]
 ### Added

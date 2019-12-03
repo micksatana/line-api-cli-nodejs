@@ -1,5 +1,6 @@
 /**
  * @typedef Scenario
+ * @property {string} id Scenario ID. Not necessary when creating or updating a scenario set.
  * @property {object} trigger Condition that, when met, starts the scenario.
  * @property {'IMMEDIATE'|'BLE_NOTIFICATION'} trigger.type
  *  `IMMEDIATE`: Perform an action as soon as your device connects to the LINE app.

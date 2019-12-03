@@ -23,9 +23,11 @@ var _thingsGetDevicesOperation = _interopRequireDefault(require("../operations/t
 
 var _thingsGetProductOperation = _interopRequireDefault(require("../operations/things-get-product-operation"));
 
+var _thingsGetScenarioSetOperation = _interopRequireDefault(require("../operations/things-get-scenario-set-operation"));
+
 var _thingsListTrialOperation = _interopRequireDefault(require("../operations/things-list-trial-operation"));
 
-var _thingsRegisterScenarioOperation = _interopRequireDefault(require("../operations/things-register-scenario-operation"));
+var _thingsRegisterScenarioSetOperation = _interopRequireDefault(require("../operations/things-register-scenario-set-operation"));
 
 var _thingsRemoveTrialOperation = _interopRequireDefault(require("../operations/things-remove-trial-operation"));
 
@@ -105,12 +107,16 @@ class ThingsCommand extends _command.default {
             console.log(commandLineUsage(_thingsGetProductOperation.default.usage));
             break;
 
-          case 'register:scenarios':
-            console.log(commandLineUsage(_thingsRegisterScenarioOperation.default.usage));
+          case 'register:scenario-set':
+            console.log(commandLineUsage(_thingsRegisterScenarioSetOperation.default.usage));
+            break;
+
+          case 'get:scenario-set':
+            console.log(commandLineUsage(_thingsGetScenarioSetOperation.default.usage));
             break;
 
           default:
-            console.log(commandLineUsage([..._thingsListTrialOperation.default.usage, ..._thingsAddTrialOperation.default.usage, ..._thingsRemoveTrialOperation.default.usage, ..._thingsGetDeviceOperation.default.usage, ..._thingsGetDevicesOperation.default.usage, ..._thingsGetProductOperation.default.usage, ..._thingsRegisterScenarioOperation.default.usage]));
+            console.log(commandLineUsage([..._thingsListTrialOperation.default.usage, ..._thingsAddTrialOperation.default.usage, ..._thingsRemoveTrialOperation.default.usage, ..._thingsGetDeviceOperation.default.usage, ..._thingsGetDevicesOperation.default.usage, ..._thingsGetProductOperation.default.usage, ..._thingsRegisterScenarioSetOperation.default.usage, ..._thingsGetScenarioSetOperation.default.usage]));
         }
 
         process.exit(0);
@@ -136,8 +142,10 @@ class ThingsCommand extends _command.default {
         await _thingsGetDevicesOperation.default.run();
       } else if (operation === 'get:product') {
         await _thingsGetProductOperation.default.run();
-      } else if (operation === 'register:scenarios') {
-        await _thingsRegisterScenarioOperation.default.run();
+      } else if (operation === 'register:scenario-set') {
+        await _thingsRegisterScenarioSetOperation.default.run();
+      } else if (operation === 'get:scenario-set') {
+        await _thingsGetScenarioSetOperation.default.run();
       } else {
         await _imageHelper.default.draw('chick-helps');
         console.log(`Unknown operation: ${(operation || 'undefined').code}`.warn);

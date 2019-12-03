@@ -19,12 +19,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-class ThingsRegisterScenarioOperation extends _thingsOperation.default {
+class ThingsRegisterScenarioSetOperation extends _thingsOperation.default {
   static get usage() {
     /** @type {Section[]} */
     const sections = [{
       header: 'Register (create or update) a scenario set for automatic communication under a product'.help,
-      content: `things register:scenarios`.code
+      content: `things register:scenario-set`.code
     }];
     return sections;
   }
@@ -80,9 +80,9 @@ class ThingsRegisterScenarioOperation extends _thingsOperation.default {
 
 }
 
-exports.default = ThingsRegisterScenarioOperation;
+exports.default = ThingsRegisterScenarioSetOperation;
 
-_defineProperty(ThingsRegisterScenarioOperation, "request", new _thingsUpdateProductScenarioSetRequest.default({
-  accessToken: ThingsRegisterScenarioOperation.config.channel.accessToken
+_defineProperty(ThingsRegisterScenarioSetOperation, "request", new _thingsUpdateProductScenarioSetRequest.default({
+  accessToken: ThingsRegisterScenarioSetOperation.config.channel.accessToken
 }));
-//# sourceMappingURL=things-register-scenario-operation.js.map
+//# sourceMappingURL=things-register-scenario-set-operation.js.map
