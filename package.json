@@ -1,6 +1,6 @@
 {
   "name": "@intocode-io/line-api-cli",
-  "version": "1.2.0-alpha.2",
+  "version": "1.2.0",
   "description": "LINE API CLIs for Node.js",
   "main": "lib/index.js",
   "bin": {
