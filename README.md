@@ -39,7 +39,8 @@ LINE API CLI helps you to work with LINE-API-related projects faster as you do n
     - `get:device`
     - `get:devices`
     - `get:product`
-    - `register:scenarios`
+    - `register:scenario-set`
+    - `get:scenario-set`
 
 ## Installation
 
@@ -220,7 +221,13 @@ things get:product
 ### Register (create or update) a scenario set for automatic communication under a product
 
 ```
-things register:scenarios
+things register:scenario-set
+```
+
+### Get the scenario set registered under a product
+
+```
+things get:scenario-set
 ```
 
 ## Comprehensive usage

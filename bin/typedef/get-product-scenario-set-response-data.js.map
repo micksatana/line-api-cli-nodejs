@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../lib/typedef/get-product-scenario-set-response-data.js"],"names":[],"mappings":"AAAA","sourcesContent":["/**\n * @typedef GetProductScenarioSetResponseData\n * @type {ProductScenarioSetData}\n */\n"],"file":"get-product-scenario-set-response-data.js"}
