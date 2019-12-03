@@ -29,6 +29,8 @@ var _thingsListTrialOperation = _interopRequireDefault(require("../operations/th
 
 var _thingsRegisterScenarioSetOperation = _interopRequireDefault(require("../operations/things-register-scenario-set-operation"));
 
+var _thingsRemoveScenarioSetOperation = _interopRequireDefault(require("../operations/things-remove-scenario-set-operation"));
+
 var _thingsRemoveTrialOperation = _interopRequireDefault(require("../operations/things-remove-trial-operation"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -115,8 +117,12 @@ class ThingsCommand extends _command.default {
             console.log(commandLineUsage(_thingsGetScenarioSetOperation.default.usage));
             break;
 
+          case 'remove:scenario-set':
+            console.log(commandLineUsage(_thingsRemoveScenarioSetOperation.default.usage));
+            break;
+
           default:
-            console.log(commandLineUsage([..._thingsListTrialOperation.default.usage, ..._thingsAddTrialOperation.default.usage, ..._thingsRemoveTrialOperation.default.usage, ..._thingsGetDeviceOperation.default.usage, ..._thingsGetDevicesOperation.default.usage, ..._thingsGetProductOperation.default.usage, ..._thingsRegisterScenarioSetOperation.default.usage, ..._thingsGetScenarioSetOperation.default.usage]));
+            console.log(commandLineUsage([..._thingsListTrialOperation.default.usage, ..._thingsAddTrialOperation.default.usage, ..._thingsRemoveTrialOperation.default.usage, ..._thingsGetDeviceOperation.default.usage, ..._thingsGetDevicesOperation.default.usage, ..._thingsGetProductOperation.default.usage, ..._thingsRegisterScenarioSetOperation.default.usage, ..._thingsRemoveScenarioSetOperation.default.usage, ..._thingsGetScenarioSetOperation.default.usage]));
         }
 
         process.exit(0);
@@ -144,6 +150,8 @@ class ThingsCommand extends _command.default {
         await _thingsGetProductOperation.default.run();
       } else if (operation === 'register:scenario-set') {
         await _thingsRegisterScenarioSetOperation.default.run();
+      } else if (operation === 'remove:scenario-set') {
+        await _thingsRemoveScenarioSetOperation.default.run();
       } else if (operation === 'get:scenario-set') {
         await _thingsGetScenarioSetOperation.default.run();
       } else {
