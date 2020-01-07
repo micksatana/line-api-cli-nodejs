@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.3.x]
+### Fixed
+ - Fixed `npm test` failed on Windows
+
 ## [1.2.0]
 ### Added
  - `things register:scenario-set` Register (create or update) a scenario set for automatic communication under a product.
