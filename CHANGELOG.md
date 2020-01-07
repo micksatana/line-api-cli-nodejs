@@ -3,6 +3,7 @@
 ## [1.3.x]
 ### Fixed
  - Fixed `npm test` failed on Windows
+ - Fixed missing qs module
 
 ## [1.2.0]
 ### Added
