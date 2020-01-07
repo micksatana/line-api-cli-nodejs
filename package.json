@@ -52,6 +52,7 @@
     "console.table": "^0.10.0",
     "js-yaml": "^3.13.1",
     "prompts": "^2.2.1",
+    "qs": "^6.9.1",
     "terminal-kit": "^1.31.3"
   },
   "devDependencies": {
