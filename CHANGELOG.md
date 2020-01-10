@@ -2,7 +2,7 @@
 
 ## [1.3.x]
 ### Added
- - `linetv list:curation` Gets a spotlight data unit list such as represent_clip, editor_pick_clip, and theme_playlist. 
+ - `linetv list:modules` Gets a spotlight data unit list such as represent_clip, editor_pick_clip, and theme_playlist. 
 
 ## [1.2.0]
 ### Added

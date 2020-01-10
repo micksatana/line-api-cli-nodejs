@@ -251,7 +251,7 @@ things remove:scenario-set
 ### List sportlight curation module types
 
 ```
-linetv list:curation
+linetv list:modules
 ```
 
 ## Comprehensive usage
