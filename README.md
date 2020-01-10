@@ -48,6 +48,10 @@ LINE API CLI helps you to work with LINE-API-related projects faster as you do n
    - `remove:scenario-set`
    - `get:scenario-set`
 
+#### LINE TV API
+ - `linetv`
+    - `list:curation`
+
 ## Installation
 
 ```
@@ -242,6 +246,14 @@ things get:scenario-set
 things remove:scenario-set
 ```
 
+## Working with LINE TV using `linetv` command
+
+### List sportlight curation module types
+
+```
+linetv list:curation
+```
+
 ## Comprehensive usage
 
 We provide comprehensive usage of each command / operation / option with CLI. Simply run a command with/without operation and follow by `--help` option. For example,
@@ -257,7 +269,7 @@ line --help
 
 ## MIT License
 
-Copyright (c) 2019 intocode Co., Ltd.
+Copyright (c) 2019-2020 intocode Co., Ltd.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
