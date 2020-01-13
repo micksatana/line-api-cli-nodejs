@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "bin": {
     "line": "bin/clis/line-cli.js",
+    "linetv": "bin/clis/linetv-cli.js",
     "richmenu": "bin/clis/richmenu-cli.js",
     "liff": "bin/clis/liff-cli.js",
     "things": "bin/clis/things-cli.js"

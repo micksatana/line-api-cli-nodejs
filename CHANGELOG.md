@@ -1,6 +1,8 @@
 # Changelog
 
 ## [1.3.x]
+### Added
+ - `linetv list:modules` Gets a spotlight data unit list such as represent_clip, editor_pick_clip, and theme_playlist. 
 ### Fixed
  - Fixed `npm test` failed on Windows
  - Fixed missing qs module
