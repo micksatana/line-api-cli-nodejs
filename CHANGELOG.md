@@ -3,6 +3,8 @@
 ## [1.3.x]
 ### Added
  - `linetv list:modules` Gets a spotlight data unit list such as represent_clip, editor_pick_clip, and theme_playlist. 
+ - `linetv get:spotlight` Gets spotlight data.
+ - `linetv get:spotlight --format json` Gets spotlight data in JSON format.
 ### Fixed
  - Fixed `npm test` failed on Windows
  - Fixed missing qs module
