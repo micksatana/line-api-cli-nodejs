@@ -17,6 +17,8 @@ var _theme = _interopRequireDefault(require("../theme"));
 
 var _linetvListModulesOperation = _interopRequireDefault(require("../operations/linetv-list-modules-operation"));
 
+var _linetvGetSportlightOperation = _interopRequireDefault(require("../operations/linetv-get-sportlight-operation"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class LINETvCommand extends _command.default {
@@ -44,6 +46,9 @@ class LINETvCommand extends _command.default {
       name: 'version',
       alias: 'v',
       type: Boolean
+    }, {
+      name: 'format',
+      type: String
     }], {
       argv
     });
@@ -73,8 +78,12 @@ class LINETvCommand extends _command.default {
             console.log(commandLineUsage(_linetvListModulesOperation.default.usage));
             break;
 
+          case 'get:spotlight':
+            console.log(commandLineUsage(_linetvGetSportlightOperation.default.usage));
+            break;
+
           default:
-            console.log(commandLineUsage([..._linetvListModulesOperation.default.usage]));
+            console.log(commandLineUsage([..._linetvListModulesOperation.default.usage, ..._linetvGetSportlightOperation.default.usage]));
         }
 
         process.exit(0);
@@ -90,6 +99,8 @@ class LINETvCommand extends _command.default {
 
       if (operation === 'list:modules') {
         await _linetvListModulesOperation.default.run();
+      } else if (operation === 'get:spotlight') {
+        await _linetvGetSportlightOperation.default.run(options);
       } else {
         await _imageHelper.default.draw('chick-helps');
         console.log(`Unknown operation: ${(operation || 'undefined').code}`.warn);

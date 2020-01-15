@@ -50,7 +50,8 @@ LINE API CLI helps you to work with LINE-API-related projects faster as you do n
 
 #### LINE TV API
  - `linetv`
-    - `list:curation`
+    - `list:modules`
+    - `get:spotlight`
 
 ## Installation
 
@@ -252,6 +253,16 @@ things remove:scenario-set
 
 ```
 linetv list:modules
+```
+### List sportlight data
+
+```
+linetv get:spotlight
+```
+To display sportlight data in JSON use `--format` option.
+
+```
+linetv get:sportlight --format json
 ```
 
 ## Comprehensive usage
