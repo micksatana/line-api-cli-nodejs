@@ -18,7 +18,7 @@ class LINETvGetSpotlightRequest extends _linetvRequest.default {
    * @param {number} channelId
    * @param {string} countryCode
    * @param {string} moduleName
-   * @return
+   * @return {AxiosResponse<LINETvGetSpotlightResponseData>}
    */
 
 

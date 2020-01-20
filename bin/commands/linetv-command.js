@@ -19,6 +19,10 @@ var _linetvListModulesOperation = _interopRequireDefault(require("../operations/
 
 var _linetvGetSportlightOperation = _interopRequireDefault(require("../operations/linetv-get-sportlight-operation"));
 
+var _linetvListCategoryOperation = _interopRequireDefault(require("../operations/linetv-list-category-operation"));
+
+var _linetvGetCategoryOperation = _interopRequireDefault(require("../operations/linetv-get-category-operation"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class LINETvCommand extends _command.default {
@@ -82,8 +86,16 @@ class LINETvCommand extends _command.default {
             console.log(commandLineUsage(_linetvGetSportlightOperation.default.usage));
             break;
 
+          case 'list:category':
+            console.log(commandLineUsage(_linetvListCategoryOperation.default.usage));
+            break;
+
+          case 'get:category':
+            console.log(commandLineUsage(_linetvGetCategoryOperation.default.usage));
+            break;
+
           default:
-            console.log(commandLineUsage([..._linetvListModulesOperation.default.usage, ..._linetvGetSportlightOperation.default.usage]));
+            console.log(commandLineUsage([..._linetvListModulesOperation.default.usage, ..._linetvGetSportlightOperation.default.usage, ..._linetvListCategoryOperation.default.usage, ..._linetvGetCategoryOperation.default.usage]));
         }
 
         process.exit(0);
@@ -101,6 +113,10 @@ class LINETvCommand extends _command.default {
         await _linetvListModulesOperation.default.run();
       } else if (operation === 'get:spotlight') {
         await _linetvGetSportlightOperation.default.run(options);
+      } else if (operation === 'list:category') {
+        await _linetvListCategoryOperation.default.run();
+      } else if (operation === 'get:category') {
+        await _linetvGetCategoryOperation.default.run();
       } else {
         await _imageHelper.default.draw('chick-helps');
         console.log(`Unknown operation: ${(operation || 'undefined').code}`.warn);
