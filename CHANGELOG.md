@@ -9,6 +9,7 @@
  - `linetv get:category` Gets category home data.
  - `linetv ranking` Gets clip ranking data.
  - `linetv search` Gets a clip search result.
+ - `linetv list:station` Gets the station home (TV station) list.
 
 ### Fixed
  - Fixed `npm test` failed on Windows

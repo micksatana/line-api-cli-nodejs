@@ -289,6 +289,12 @@ linetv ranking
 linetv search
 ```
 
+### Gets the station home (TV station) list.
+
+```
+linetv list:station
+```
+
 ## Comprehensive usage
 
 We provide comprehensive usage of each command / operation / option with CLI. Simply run a command with/without operation and follow by `--help` option. For example,

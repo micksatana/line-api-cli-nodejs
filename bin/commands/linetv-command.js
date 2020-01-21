@@ -27,6 +27,8 @@ var _linetvRankingOperation = _interopRequireDefault(require("../operations/line
 
 var _linetvSearchOperation = _interopRequireDefault(require("../operations/linetv-search-operation"));
 
+var _linetvListStationOperation = _interopRequireDefault(require("../operations/linetv-list-station-operation"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class LINETvCommand extends _command.default {
@@ -106,8 +108,12 @@ class LINETvCommand extends _command.default {
             console.log(commandLineUsage(_linetvSearchOperation.default.usage));
             break;
 
+          case 'list:station':
+            console.log(commandLineUsage(_linetvListStationOperation.default.usage));
+            break;
+
           default:
-            console.log(commandLineUsage([..._linetvListModulesOperation.default.usage, ..._linetvGetSportlightOperation.default.usage, ..._linetvListCategoryOperation.default.usage, ..._linetvGetCategoryOperation.default.usage, ..._linetvRankingOperation.default.usage, ..._linetvSearchOperation.default.usage]));
+            console.log(commandLineUsage([..._linetvListModulesOperation.default.usage, ..._linetvGetSportlightOperation.default.usage, ..._linetvListCategoryOperation.default.usage, ..._linetvGetCategoryOperation.default.usage, ..._linetvRankingOperation.default.usage, ..._linetvSearchOperation.default.usage, ..._linetvListStationOperation.default.usage]));
         }
 
         process.exit(0);
@@ -133,6 +139,8 @@ class LINETvCommand extends _command.default {
         await _linetvRankingOperation.default.run();
       } else if (operation === 'search') {
         await _linetvSearchOperation.default.run();
+      } else if (operation === 'list:station') {
+        await _linetvListStationOperation.default.run();
       } else {
         await _imageHelper.default.draw('chick-helps');
         console.log(`Unknown operation: ${(operation || 'undefined').code}`.warn);
