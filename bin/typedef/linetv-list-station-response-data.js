@@ -1,0 +1,7 @@
+/**
+ * @typedef LINETvListStationResponseData
+ * @property {{ message: string; code: number }} header
+ * @property {{ stations: Array<{ stationId: string; stationName: string; stationLogo: string; serviceUrl: string }> }} body
+ */
+"use strict";
+//# sourceMappingURL=linetv-list-station-response-data.js.map

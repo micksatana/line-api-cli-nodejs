@@ -1,10 +1,11 @@
 {
   "name": "@intocode-io/line-api-cli",
-  "version": "1.2.0",
+  "version": "1.3.0-alpha.0",
   "description": "LINE API CLIs for Node.js",
   "main": "lib/index.js",
   "bin": {
     "line": "bin/clis/line-cli.js",
+    "linetv": "bin/clis/linetv-cli.js",
     "richmenu": "bin/clis/richmenu-cli.js",
     "liff": "bin/clis/liff-cli.js",
     "things": "bin/clis/things-cli.js"
@@ -38,6 +39,9 @@
     "interface"
   ],
   "author": "Satana Charuwichitratana",
+  "contributors": [
+    "Somsak Rakjoi"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/intocode-io/line-api-cli-nodejs/issues"
@@ -52,6 +56,7 @@
     "console.table": "^0.10.0",
     "js-yaml": "^3.13.1",
     "prompts": "^2.2.1",
+    "qs": "^6.9.1",
     "terminal-kit": "^1.31.3"
   },
   "devDependencies": {

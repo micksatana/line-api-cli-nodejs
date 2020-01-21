@@ -48,6 +48,11 @@ LINE API CLI helps you to work with LINE-API-related projects faster as you do n
    - `remove:scenario-set`
    - `get:scenario-set`
 
+#### LINE TV API
+ - `linetv`
+    - `list:modules`
+    - `get:spotlight`
+
 ## Installation
 
 ```
@@ -242,6 +247,54 @@ things get:scenario-set
 things remove:scenario-set
 ```
 
+## Working with LINE TV using `linetv` command
+
+### List sportlight curation module types
+
+```
+linetv list:modules
+```
+### List sportlight data
+
+```
+linetv get:spotlight
+```
+To display sportlight data in JSON use `--format` option.
+
+```
+linetv get:sportlight --format json
+```
+
+### Category List
+
+```
+linetv list:category
+```
+
+### Gets category home data
+
+```
+linetv get:category
+```
+
+### Gets clip ranking data
+
+```
+linetv ranking
+```
+
+### Gets a clip search result
+
+```
+linetv search
+```
+
+### Gets the station home (TV station) list.
+
+```
+linetv list:station
+```
+
 ## Comprehensive usage
 
 We provide comprehensive usage of each command / operation / option with CLI. Simply run a command with/without operation and follow by `--help` option. For example,
@@ -257,7 +310,7 @@ line --help
 
 ## MIT License
 
-Copyright (c) 2019 intocode Co., Ltd.
+Copyright (c) 2019-2020 intocode Co., Ltd.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

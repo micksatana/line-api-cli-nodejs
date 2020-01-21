@@ -14,6 +14,8 @@ require("./liff-update-request-data");
 
 require("./line-command-options");
 
+require("./linetv-list-modules-response-data");
+
 require("./product-scenario-set-data");
 
 require("./rich-menu-area-data");
