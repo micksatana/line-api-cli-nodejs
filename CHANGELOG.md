@@ -8,6 +8,7 @@
  - `linetv list:category` Gets a category list such as drama, music, etc.
  - `linetv get:category` Gets category home data.
  - `linetv ranking` Gets clip ranking data.
+ - `linetv search` Gets a clip search result.
 
 ### Fixed
  - Fixed `npm test` failed on Windows

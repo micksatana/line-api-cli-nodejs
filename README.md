@@ -283,6 +283,12 @@ linetv get:category
 linetv ranking
 ```
 
+### Gets a clip search result
+
+```
+linetv search
+```
+
 ## Comprehensive usage
 
 We provide comprehensive usage of each command / operation / option with CLI. Simply run a command with/without operation and follow by `--help` option. For example,
