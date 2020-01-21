@@ -21,6 +21,8 @@ var _linetvGetSportlightRequest = _interopRequireDefault(require("./apis/linetv-
 
 var _linetvListModulesRequest = _interopRequireDefault(require("./apis/linetv-list-modules-request"));
 
+var _linetvRankingRequest = _interopRequireDefault(require("./apis/linetv-ranking-request"));
+
 var _linetvRequest = _interopRequireDefault(require("./apis/linetv-request"));
 
 var _oauthIssueTokenRequest = _interopRequireDefault(require("./apis/oauth-issue-token-request"));
@@ -72,6 +74,7 @@ const apis = {
   LINETvGetSpotlightRequest: _linetvGetSportlightRequest.default,
   LINETvListCategoryRequest: _linetvListCatagoryRequest.default,
   LINETvListModulesRequest: _linetvListModulesRequest.default,
+  LINETvRankingRequest: _linetvRankingRequest.default,
   LINETvRequest: _linetvRequest.default,
   OAuthIssueTokenRequest: _oauthIssueTokenRequest.default,
   OAuthRequest: _oauthRequest.default,

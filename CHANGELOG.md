@@ -7,7 +7,8 @@
  - `linetv get:spotlight --format json` Gets spotlight data in JSON format.
  - `linetv list:category` Gets a category list such as drama, music, etc.
  - `linetv get:category` Gets category home data.
- 
+ - `linetv ranking` Gets clip ranking data.
+
 ### Fixed
  - Fixed `npm test` failed on Windows
  - Fixed missing qs module
