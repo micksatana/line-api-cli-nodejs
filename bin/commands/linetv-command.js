@@ -61,6 +61,10 @@ class LINETvCommand extends _command.default {
     }, {
       name: 'format',
       type: String
+    }, {
+      name: 'page',
+      alias: 'p',
+      type: Number
     }], {
       argv
     });

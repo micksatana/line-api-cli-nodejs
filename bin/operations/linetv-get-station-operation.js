@@ -28,12 +28,16 @@ class LINETvGetStationOperation extends _operation.default {
     /** @type {Section[]} */
     const sections = [{
       header: 'Gets the Station Home (TV Station) data'.help,
-      content: `To display station dat in table` + _os.EOL + _os.EOL + `linetv get:station`.code + _os.EOL + _os.EOL + `To get station data in JSON format, you can run with --format option.` + _os.EOL + _os.EOL + `linetv get:station --format json`.code
+      content: `To display station dat in table` + _os.EOL + _os.EOL + `linetv get:station`.code + _os.EOL + _os.EOL + `To get station data in JSON format, you can run with --format option.` + _os.EOL + _os.EOL + `linetv get:station --format json`.code + _os.EOL + _os.EOL + `To get station data start from selected page, you can run with --page option.` + _os.EOL + _os.EOL + `linetv get:station --page <number>`.code
     }, {
       header: 'Options',
       optionList: [{
         name: 'format'.code,
         description: 'To display data in JSON format'
+      }, {
+        name: 'page'.code,
+        typeLabel: '{underline number}',
+        description: 'To display data starts from selected page'
       }]
     }];
     return sections;
@@ -64,7 +68,6 @@ class LINETvGetStationOperation extends _operation.default {
     try {
       /** @type {import('axios').AxiosResponse<LINETvListStationResponseData>} */
       const listResponse = await this.listRequest.send(channelId, countryCode);
-      console.log(listResponse.data);
 
       if (!listResponse.data || listResponse.data.body === null) {
         console.log('Station data not found'.warn);
@@ -88,7 +91,7 @@ class LINETvGetStationOperation extends _operation.default {
       return true;
     }
 
-    let page = 1;
+    let page = options.page || 1;
     const {
       selectedStation
     } = await prompts({
@@ -106,7 +109,6 @@ class LINETvGetStationOperation extends _operation.default {
       return true;
     }
 
-    console.log(getResponse.data.body.popularClip.hasMore);
     console.table(getResponse.data.body.popularClip.clips.map(item => {
       const columnHeader = {};
       columnHeader['Clip Number'.success] = item.clipNo;
@@ -131,7 +133,7 @@ class LINETvGetStationOperation extends _operation.default {
       } = await prompts({
         type: 'toggle',
         name: 'nextPage',
-        message: 'Next Page ?',
+        message: `Current page: ${page}. Go to next page ?`,
         initial: true,
         active: 'yes',
         inactive: 'no'

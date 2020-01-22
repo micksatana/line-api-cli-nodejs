@@ -259,7 +259,7 @@ linetv list:modules
 ```
 linetv get:spotlight
 ```
-To display sportlight data in JSON use `--format` option.
+To get sportlight data in JSON use `--format` option.
 
 ```
 linetv get:sportlight --format json
@@ -300,10 +300,16 @@ linetv list:station
 ```
 linetv get:station
 ```
-To display sportlight data in JSON use `--format` option.
+To get TV Station data in JSON use `--format` option.
 
 ```
 linetv get:station --format json
+```
+
+To get TV Station data start from selected page use `--page` option.
+
+```
+linetv get:station --page
 ```
 
 
