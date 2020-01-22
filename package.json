@@ -39,6 +39,9 @@
     "interface"
   ],
   "author": "Satana Charuwichitratana",
+  "contributors": [
+    "Somsak Rakjoi"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/intocode-io/line-api-cli-nodejs/issues"

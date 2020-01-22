@@ -7,7 +7,15 @@
  - `linetv get:spotlight --format json` Gets spotlight data in JSON format.
  - `linetv list:category` Gets a category list such as drama, music, etc.
  - `linetv get:category` Gets category home data.
- 
+ - `linetv ranking` Gets clip ranking data.
+ - `linetv search` Gets a clip search result.
+ - `linetv list:station` Gets the station home (TV station) list.
+ - `linetv get:station` Gets the Station Home (TV Station) data.
+ - `linetv get:station --format json` Gets the Station Home (TV Station) data in JSON format.
+ - `linetv get:station --page <number>` Gets the Station Home (TV Station) data start from selected page.
+ - `linetv live` Gets live schedule information.
+ - `linetv live --format json` Gets live schedule data in JSON format.
+
 ### Fixed
  - Fixed `npm test` failed on Windows
  - Fixed missing qs module

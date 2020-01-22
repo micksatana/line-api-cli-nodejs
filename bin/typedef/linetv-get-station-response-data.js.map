@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../lib/typedef/linetv-get-station-response-data.js"],"names":[],"mappings":"AAAA","sourcesContent":["/**\n * @typedef LINETvGetStationResponseData\n * @property {{ message: string; code: number }} header\n * @property {LINETvStationData} body\n */\n"],"file":"linetv-get-station-response-data.js"}

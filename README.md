@@ -259,20 +259,70 @@ linetv list:modules
 ```
 linetv get:spotlight
 ```
-To display sportlight data in JSON use `--format` option.
+To get sportlight data in JSON use `--format` option.
 
 ```
 linetv get:sportlight --format json
 ```
+
 ### Category List
+
 ```
 linetv list:category
 ```
-### Gets category home data.
+
+### Gets category home data
 
 ```
 linetv get:category
 ```
+
+### Gets clip ranking data
+
+```
+linetv ranking
+```
+
+### Gets a clip search result
+
+```
+linetv search
+```
+
+### Gets the station home (TV station) list.
+
+```
+linetv list:station
+```
+
+### Gets the Station Home (TV Station) data.
+
+```
+linetv get:station
+```
+To get TV Station data in JSON use `--format` option.
+
+```
+linetv get:station --format json
+```
+
+To get TV Station data start from selected page use `--page` option.
+
+```
+linetv get:station --page
+```
+
+### Gets live schedule information.
+
+```
+linetv live
+```
+To get live schedule data in JSON use `--format` option.
+
+```
+linetv live --format json
+```
+
 ## Comprehensive usage
 
 We provide comprehensive usage of each command / operation / option with CLI. Simply run a command with/without operation and follow by `--help` option. For example,

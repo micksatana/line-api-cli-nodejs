@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../lib/typedef/linetv-ranking-response-data.js"],"names":[],"mappings":"AAAA","sourcesContent":["/**\n * @typedef LINETvRankingResponseData\n * @property {{ message: string; code: number }} header\n * @property {{ clips: Array<LINETvClipData> ; hasMore: boolean}} body\n */\n"],"file":"linetv-ranking-response-data.js"}
