@@ -17,6 +17,8 @@ var _linetvGetCategoryRequest = _interopRequireDefault(require("./apis/linetv-ge
 
 var _linetvGetSportlightRequest = _interopRequireDefault(require("./apis/linetv-get-sportlight-request"));
 
+var _linetvGetStationRequest = _interopRequireDefault(require("./apis/linetv-get-station-request"));
+
 var _linetvListCatagoryRequest = _interopRequireDefault(require("./apis/linetv-list-catagory-request"));
 
 var _linetvListModulesRequest = _interopRequireDefault(require("./apis/linetv-list-modules-request"));
@@ -74,6 +76,7 @@ const apis = {
   LIFFRequest: _liffRequest.default,
   LINETvGetCategoryRequest: _linetvGetCategoryRequest.default,
   LINETvGetSpotlightRequest: _linetvGetSportlightRequest.default,
+  LINETvGetStationRequest: _linetvGetStationRequest.default,
   LINETvListCategoryRequest: _linetvListCatagoryRequest.default,
   LINETvListModulesRequest: _linetvListModulesRequest.default,
   LINETvListStationRequest: _linetvListStationRequest.default,

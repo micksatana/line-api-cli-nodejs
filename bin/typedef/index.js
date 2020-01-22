@@ -14,7 +14,27 @@ require("./liff-update-request-data");
 
 require("./line-command-options");
 
+require("./linetv-channel-data");
+
+require("./linetv-clip-data");
+
+require("./linetv-detail-playlist-data");
+
+require("./linetv-get-category-response-data");
+
+require("./linetv-get-spotlight-response-data");
+
+require("./linetv-list-station-response-data");
+
 require("./linetv-list-modules-response-data");
+
+require("./linetv-playlist-data");
+
+require("./linetv-ranking-response-data");
+
+require("./linetv-search-response-data");
+
+require("./linetv-station-data");
 
 require("./product-scenario-set-data");
 

@@ -29,6 +29,8 @@ var _linetvSearchOperation = _interopRequireDefault(require("../operations/linet
 
 var _linetvListStationOperation = _interopRequireDefault(require("../operations/linetv-list-station-operation"));
 
+var _linetvGetStationOperation = _interopRequireDefault(require("../operations/linetv-get-station-operation"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class LINETvCommand extends _command.default {
@@ -112,8 +114,12 @@ class LINETvCommand extends _command.default {
             console.log(commandLineUsage(_linetvListStationOperation.default.usage));
             break;
 
+          case 'get:station':
+            console.log(commandLineUsage(_linetvGetStationOperation.default.usage));
+            break;
+
           default:
-            console.log(commandLineUsage([..._linetvListModulesOperation.default.usage, ..._linetvGetSportlightOperation.default.usage, ..._linetvListCategoryOperation.default.usage, ..._linetvGetCategoryOperation.default.usage, ..._linetvRankingOperation.default.usage, ..._linetvSearchOperation.default.usage, ..._linetvListStationOperation.default.usage]));
+            console.log(commandLineUsage([..._linetvListModulesOperation.default.usage, ..._linetvGetSportlightOperation.default.usage, ..._linetvListCategoryOperation.default.usage, ..._linetvGetCategoryOperation.default.usage, ..._linetvRankingOperation.default.usage, ..._linetvSearchOperation.default.usage, ..._linetvListStationOperation.default.usage, ..._linetvGetStationOperation.default.usage]));
         }
 
         process.exit(0);
@@ -141,6 +147,8 @@ class LINETvCommand extends _command.default {
         await _linetvSearchOperation.default.run();
       } else if (operation === 'list:station') {
         await _linetvListStationOperation.default.run();
+      } else if (operation === 'get:station') {
+        await _linetvGetStationOperation.default.run(options);
       } else {
         await _imageHelper.default.draw('chick-helps');
         console.log(`Unknown operation: ${(operation || 'undefined').code}`.warn);

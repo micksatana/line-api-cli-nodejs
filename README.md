@@ -295,6 +295,18 @@ linetv search
 linetv list:station
 ```
 
+### Gets the Station Home (TV Station) data.
+
+```
+linetv get:station
+```
+To display sportlight data in JSON use `--format` option.
+
+```
+linetv get:station --format json
+```
+
+
 ## Comprehensive usage
 
 We provide comprehensive usage of each command / operation / option with CLI. Simply run a command with/without operation and follow by `--help` option. For example,

@@ -10,6 +10,8 @@
  - `linetv ranking` Gets clip ranking data.
  - `linetv search` Gets a clip search result.
  - `linetv list:station` Gets the station home (TV station) list.
+ - `linetv get:station` Gets the Station Home (TV Station) data.
+ - `linetv get:station --format json` Gets the Station Home (TV Station) data in JSON format.
 
 ### Fixed
  - Fixed `npm test` failed on Windows
