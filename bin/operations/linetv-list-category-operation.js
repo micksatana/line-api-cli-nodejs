@@ -29,6 +29,10 @@ class LINETvListCategoryOperation extends _operation.default {
     return sections;
   }
 
+  static validateCountryCode(countryCode) {
+    return countryCode.length !== 2 ? 'Please input ISO 3166-2 (2 characters)' : true;
+  }
+
   static async run() {
     if (!this.validateConfig()) {
       return false;
@@ -42,7 +46,8 @@ class LINETvListCategoryOperation extends _operation.default {
     } = (await prompts({
       type: 'text',
       name: 'countryCode',
-      message: 'Country Code?'
+      message: `Country Code ${'ISO 3166-2'.prompt}`,
+      validate: this.validateCountryCode
     }, this.cancelOption)) || {};
 
     try {

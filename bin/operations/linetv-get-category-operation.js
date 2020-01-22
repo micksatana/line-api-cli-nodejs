@@ -102,13 +102,23 @@ class LINETvGetCategoryOperation extends _operation.default {
     }, this.cancelOption);
     let getResponse = await this.getRequest.send(channelId, countryCode, selectedCategory.categoryCode, page, countPerPage);
     const clip = getResponse.data.body.representClip;
-    const column = {};
-    column['Represent Clip No.'.success] = clip.clipNo;
-    column['Represent Clip Title'.success] = clip.clipTitle;
-    column['Represent Clip URL'.success] = clip.serviceUrl;
-    column['Play Count'.success] = clip.playCount;
-    column['Likeit Count'.success] = clip.likeitPoint;
-    console.table(column);
+    const representClip = [{
+      ' ': 'Represent Clip No.'.success,
+      '  ': clip.clipNo
+    }, {
+      ' ': 'Represent Clip Title.'.success,
+      '  ': clip.clipTitle
+    }, {
+      ' ': 'Represent Clip URL'.success,
+      '  ': clip.serviceUrl
+    }, {
+      ' ': 'Play Count'.success,
+      '  ': clip.playCount
+    }, {
+      ' ': 'Likeit Count'.success,
+      '  ': clip.likeitPoint
+    }];
+    console.table(representClip);
     console.table(getResponse.data.body.channels.map(item => {
       const columnHeader = {};
       columnHeader['Channel ID'.success] = item.channelId;
