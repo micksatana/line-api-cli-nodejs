@@ -312,6 +312,16 @@ To get TV Station data start from selected page use `--page` option.
 linetv get:station --page
 ```
 
+### Gets live schedule information.
+
+```
+linetv live
+```
+To get live schedule data in JSON use `--format` option.
+
+```
+linetv live --format json
+```
 
 ## Comprehensive usage
 

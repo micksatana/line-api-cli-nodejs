@@ -13,6 +13,8 @@
  - `linetv get:station` Gets the Station Home (TV Station) data.
  - `linetv get:station --format json` Gets the Station Home (TV Station) data in JSON format.
  - `linetv get:station --page <number>` Gets the Station Home (TV Station) data start from selected page.
+ - `linetv live` Gets live schedule information.
+ - `linetv live --format json` Gets live schedule data in JSON format.
 
 ### Fixed
  - Fixed `npm test` failed on Windows

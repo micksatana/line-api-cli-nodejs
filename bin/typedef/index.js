@@ -28,6 +28,10 @@ require("./linetv-list-station-response-data");
 
 require("./linetv-list-modules-response-data");
 
+require("./linetv-live-data");
+
+require("./linetv-live-response-data");
+
 require("./linetv-playlist-data");
 
 require("./linetv-ranking-response-data");

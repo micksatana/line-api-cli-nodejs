@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../lib/typedef/linetv-live-response-data.js"],"names":[],"mappings":"AAAA","sourcesContent":["/**\n * @typedef LINETvLiveResponseData\n * @property {{ message: string; code: number }} header\n * @property {{ lives: Array<LINETvLiveData> }} body\n */\n"],"file":"linetv-live-response-data.js"}

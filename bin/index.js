@@ -25,6 +25,8 @@ var _linetvListModulesRequest = _interopRequireDefault(require("./apis/linetv-li
 
 var _linetvListStationRequest = _interopRequireDefault(require("./apis/linetv-list-station-request"));
 
+var _linetvLiveRequest = _interopRequireDefault(require("./apis/linetv-live-request"));
+
 var _linetvRankingRequest = _interopRequireDefault(require("./apis/linetv-ranking-request"));
 
 var _linetvRequest = _interopRequireDefault(require("./apis/linetv-request"));
@@ -80,6 +82,7 @@ const apis = {
   LINETvListCategoryRequest: _linetvListCatagoryRequest.default,
   LINETvListModulesRequest: _linetvListModulesRequest.default,
   LINETvListStationRequest: _linetvListStationRequest.default,
+  LINETvLiveRequest: _linetvLiveRequest.default,
   LINETvRankingRequest: _linetvRankingRequest.default,
   LINETvRequest: _linetvRequest.default,
   OAuthIssueTokenRequest: _oauthIssueTokenRequest.default,

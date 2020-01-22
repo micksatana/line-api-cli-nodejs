@@ -31,6 +31,8 @@ var _linetvListStationOperation = _interopRequireDefault(require("../operations/
 
 var _linetvGetStationOperation = _interopRequireDefault(require("../operations/linetv-get-station-operation"));
 
+var _linetvLiveOperation = _interopRequireDefault(require("../operations/linetv-live-operation"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class LINETvCommand extends _command.default {
@@ -122,8 +124,12 @@ class LINETvCommand extends _command.default {
             console.log(commandLineUsage(_linetvGetStationOperation.default.usage));
             break;
 
+          case 'live':
+            console.log(commandLineUsage(_linetvLiveOperation.default.usage));
+            break;
+
           default:
-            console.log(commandLineUsage([..._linetvListModulesOperation.default.usage, ..._linetvGetSportlightOperation.default.usage, ..._linetvListCategoryOperation.default.usage, ..._linetvGetCategoryOperation.default.usage, ..._linetvRankingOperation.default.usage, ..._linetvSearchOperation.default.usage, ..._linetvListStationOperation.default.usage, ..._linetvGetStationOperation.default.usage]));
+            console.log(commandLineUsage([..._linetvListModulesOperation.default.usage, ..._linetvGetSportlightOperation.default.usage, ..._linetvListCategoryOperation.default.usage, ..._linetvGetCategoryOperation.default.usage, ..._linetvRankingOperation.default.usage, ..._linetvSearchOperation.default.usage, ..._linetvListStationOperation.default.usage, ..._linetvGetStationOperation.default.usage, ..._linetvLiveOperation.default.usage]));
         }
 
         process.exit(0);
@@ -153,6 +159,8 @@ class LINETvCommand extends _command.default {
         await _linetvListStationOperation.default.run();
       } else if (operation === 'get:station') {
         await _linetvGetStationOperation.default.run(options);
+      } else if (operation === 'live') {
+        await _linetvLiveOperation.default.run(options);
       } else {
         await _imageHelper.default.draw('chick-helps');
         console.log(`Unknown operation: ${(operation || 'undefined').code}`.warn);

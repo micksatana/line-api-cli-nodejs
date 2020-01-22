@@ -16,7 +16,7 @@ class LINETvListCategoryRequest extends _linetvRequest.default {
   }
   /**
     * @param {number} channelId
-    * @param {string} channelCode
+    * @param {string} countryCode
     * @return {AxiosResponse<LINETvListCategoryResponseData>}
     */
 

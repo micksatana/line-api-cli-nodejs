@@ -9,10 +9,10 @@ var _linetvRequest = _interopRequireDefault(require("./linetv-request"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-class LINETvListModulesRequest extends _linetvRequest.default {
+class LINETvLiveRequest extends _linetvRequest.default {
   constructor(options) {
     super(options);
-    this.endpoint = `${this.endpoint}/curation`;
+    this.endpoint = `${this.endpoint}/live`;
   }
   /**
     * @param {number} channelId
@@ -22,10 +22,10 @@ class LINETvListModulesRequest extends _linetvRequest.default {
 
 
   send(channelId, countryCode) {
-    return this.axios.get(`${this.endpoint}/list?lineChannelId=${channelId}&country=${countryCode}`);
+    return this.axios.get(`${this.endpoint}/schedule?lineChannelId=${channelId}&country=${countryCode}`);
   }
 
 }
 
-exports.default = LINETvListModulesRequest;
-//# sourceMappingURL=linetv-list-modules-request.js.map
+exports.default = LINETvLiveRequest;
+//# sourceMappingURL=linetv-live-request.js.map
