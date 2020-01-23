@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.3.x]
+## [1.3.0]
 ### Added
  - `linetv list:modules` Gets a spotlight data unit list such as represent_clip, editor_pick_clip, and theme_playlist.
  - `linetv list:modules --format json` Gets a spotlight data unit list in JSON format.
