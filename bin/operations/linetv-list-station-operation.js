@@ -11,6 +11,8 @@ require("console.table");
 
 var _commandLineUsage = require("command-line-usage");
 
+var _os = require("os");
+
 var _operation = _interopRequireDefault(require("./operation"));
 
 var _linetvListStationRequest = _interopRequireDefault(require("../apis/linetv-list-station-request"));
@@ -24,7 +26,13 @@ class LINETvListStationOperation extends _operation.default {
     /** @type {Section[]} */
     const sections = [{
       header: 'Gets the station home (TV station) list'.help,
-      content: `linetv list:station`.code
+      content: `To display station home in table` + _os.EOL + _os.EOL + `linetv list:station`.code + _os.EOL + _os.EOL + `To get station home data in JSON format, you can run with --format option.` + _os.EOL + _os.EOL + `linetv list:station --format json`.code
+    }, {
+      header: 'Options',
+      optionList: [{
+        name: 'format'.code,
+        description: 'To get data in JSON format'
+      }]
     }];
     return sections;
   }
@@ -33,7 +41,7 @@ class LINETvListStationOperation extends _operation.default {
     return countryCode.length !== 2 ? 'Please input ISO 3166-2 (2 characters)' : true;
   }
 
-  static async run() {
+  static async run(options) {
     if (!this.validateConfig()) {
       return false;
     }
@@ -59,14 +67,19 @@ class LINETvListStationOperation extends _operation.default {
         return true;
       }
 
-      const curationModules = response.data.body.stations.map(item => {
+      if (options.format === 'json') {
+        console.log(JSON.stringify(response.data, null, 2));
+        return true;
+      }
+
+      const stations = response.data.body.stations.map(item => {
         const columnHeader = {};
         columnHeader['Station ID'.success] = item.stationId;
         columnHeader['Station Name'.success] = item.stationName;
         columnHeader['Station URL'.success] = item.serviceUrl;
         return columnHeader;
       });
-      console.table(curationModules);
+      console.table(stations);
     } catch (error) {
       this.logAxiosError(error);
       return false;

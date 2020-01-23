@@ -28,7 +28,7 @@ class LINETvGetStationOperation extends _operation.default {
     /** @type {Section[]} */
     const sections = [{
       header: 'Gets the Station Home (TV Station) data'.help,
-      content: `To display station dat in table` + _os.EOL + _os.EOL + `linetv get:station`.code + _os.EOL + _os.EOL + `To get station data in JSON format, you can run with --format option.` + _os.EOL + _os.EOL + `linetv get:station --format json`.code + _os.EOL + _os.EOL + `To get station data start from selected page, you can run with --page option.` + _os.EOL + _os.EOL + `linetv get:station --page <number>`.code
+      content: `To display station data in table` + _os.EOL + _os.EOL + `linetv get:station`.code + _os.EOL + _os.EOL + `To get station data in JSON format, you can run with --format option.` + _os.EOL + _os.EOL + `linetv get:station --format json`.code + _os.EOL + _os.EOL + `To get station data start from selected page, you can run with --page option.` + _os.EOL + _os.EOL + `linetv get:station --page <number>`.code
     }, {
       header: 'Options',
       optionList: [{

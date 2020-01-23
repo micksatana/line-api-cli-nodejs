@@ -33,7 +33,7 @@ class LINETvGetSpotlightOperation extends _operation.default {
       header: 'Options',
       optionList: [{
         name: 'format'.code,
-        description: 'To display data in JSON format'
+        description: 'To get data in JSON format'
       }]
     }];
     return sections;

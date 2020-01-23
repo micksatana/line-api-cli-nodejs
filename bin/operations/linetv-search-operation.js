@@ -11,6 +11,8 @@ require("console.table");
 
 var _commandLineUsage = require("command-line-usage");
 
+var _os = require("os");
+
 var _operation = _interopRequireDefault(require("./operation"));
 
 var _linetvSearchRequest = _interopRequireDefault(require("../apis/linetv-search-request"));
@@ -24,7 +26,17 @@ class LINETvSearchOperation extends _operation.default {
     /** @type {Section[]} */
     const sections = [{
       header: 'Gets a clip search result.'.help,
-      content: `linetv search`.code
+      content: `To display clip search result in table` + _os.EOL + _os.EOL + `linetv search`.code + _os.EOL + _os.EOL + `To get clip search result in JSON format, you can run with --format option.` + _os.EOL + _os.EOL + `linetv search --format json`.code + _os.EOL + _os.EOL + `To get clip search result start from selected page, you can run with --page option.` + _os.EOL + _os.EOL + `linetv search --page <number>`.code
+    }, {
+      header: 'Options',
+      optionList: [{
+        name: 'format'.code,
+        description: 'To display data in JSON format'
+      }, {
+        name: 'page'.code,
+        typeLabel: '{underline number}',
+        description: 'To display data starts from selected page'
+      }]
     }];
     return sections;
   }
@@ -41,7 +53,7 @@ class LINETvSearchOperation extends _operation.default {
     return !query ? 'Query cannot empty' : true;
   }
 
-  static async run() {
+  static async run(options) {
     if (!this.validateConfig()) {
       return false;
     }
@@ -49,7 +61,7 @@ class LINETvSearchOperation extends _operation.default {
     const prompts = require('prompts');
 
     const channelId = this.config.channel.id;
-    let page = 1;
+    let page = options.page || 1;
     const {
       countryCode
     } = await prompts({
@@ -84,6 +96,11 @@ class LINETvSearchOperation extends _operation.default {
       return true;
     }
 
+    if (options.format === 'json') {
+      console.log(JSON.stringify(response.data, null, 2));
+      return true;
+    }
+
     const queryResult = response.data.body.clips.map(item => {
       const columnHeader = {};
       columnHeader['Clip Number'.success] = item.clipNo;
@@ -100,7 +117,7 @@ class LINETvSearchOperation extends _operation.default {
       } = await prompts({
         type: 'toggle',
         name: 'nextPage',
-        message: 'Next Page ?',
+        message: `Current page: ${page}. Go to next page ?`,
         initial: true,
         active: 'yes',
         inactive: 'no'

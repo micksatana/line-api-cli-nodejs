@@ -13,6 +13,8 @@ var _commandLineUsage = require("command-line-usage");
 
 var _operation = _interopRequireDefault(require("./operation"));
 
+var _os = require("os");
+
 var _linetvListCatagoryRequest = _interopRequireDefault(require("../apis/linetv-list-catagory-request"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -24,7 +26,13 @@ class LINETvListCategoryOperation extends _operation.default {
     /** @type {Section[]} */
     const sections = [{
       header: 'Gets a category list such as drama, music, etc.'.help,
-      content: `linetv list:category`.code
+      content: `To display category list in table` + _os.EOL + _os.EOL + `linetv list:category`.code + _os.EOL + _os.EOL + `To get category list data in JSON format, you can run with --format option.` + _os.EOL + _os.EOL + `linetv list:category --format json`.code
+    }, {
+      header: 'Options',
+      optionList: [{
+        name: 'format'.code,
+        description: 'To get data in JSON format'
+      }]
     }];
     return sections;
   }
@@ -33,7 +41,7 @@ class LINETvListCategoryOperation extends _operation.default {
     return countryCode.length !== 2 ? 'Please input ISO 3166-2 (2 characters)' : true;
   }
 
-  static async run() {
+  static async run(options) {
     if (!this.validateConfig()) {
       return false;
     }
@@ -56,6 +64,11 @@ class LINETvListCategoryOperation extends _operation.default {
 
       if (!response.data || response.data.body === null) {
         console.log('Category list not found'.info);
+        return true;
+      }
+
+      if (options.format === 'json') {
+        console.log(JSON.stringify(response.data, null, 2));
         return true;
       }
 

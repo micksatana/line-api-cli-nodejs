@@ -11,6 +11,8 @@ require("console.table");
 
 var _commandLineUsage = require("command-line-usage");
 
+var _os = require("os");
+
 var _operation = _interopRequireDefault(require("./operation"));
 
 var _linetvListModulesRequest = _interopRequireDefault(require("../apis/linetv-list-modules-request"));
@@ -24,7 +26,13 @@ class LINETvListModulesOperation extends _operation.default {
     /** @type {Section[]} */
     const sections = [{
       header: 'List curation module types'.help,
-      content: `linetv list:modules`.code
+      content: `To display culation moodule types in table` + _os.EOL + _os.EOL + `linetv list:modules`.code + _os.EOL + _os.EOL + `To get curation module types data in JSON format, you can run with --format option.` + _os.EOL + _os.EOL + `linetv list:modules --format json`.code
+    }, {
+      header: 'Options',
+      optionList: [{
+        name: 'format'.code,
+        description: 'To get data in JSON format'
+      }]
     }];
     return sections;
   }
@@ -33,7 +41,7 @@ class LINETvListModulesOperation extends _operation.default {
     return countryCode.length !== 2 ? 'Please input ISO 3166-2 (2 characters)' : true;
   }
 
-  static async run() {
+  static async run(options) {
     if (!this.validateConfig()) {
       return false;
     }
@@ -56,6 +64,11 @@ class LINETvListModulesOperation extends _operation.default {
 
       if (!response.data) {
         console.log('Curation module not found'.info);
+        return true;
+      }
+
+      if (options.format === 'json') {
+        console.log(JSON.stringify(response.data, null, 2));
         return true;
       }
 
