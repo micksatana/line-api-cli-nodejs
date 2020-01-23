@@ -26,7 +26,7 @@ class LINETvListModulesOperation extends _operation.default {
     /** @type {Section[]} */
     const sections = [{
       header: 'List curation module types'.help,
-      content: `To display culation moodule types in table` + _os.EOL + _os.EOL + `linetv list:modules`.code + _os.EOL + _os.EOL + `To get curation module types data in JSON format, you can run with --format option.` + _os.EOL + _os.EOL + `linetv list:modules --format json`.code
+      content: `To display curation module types in table` + _os.EOL + _os.EOL + `linetv list:modules`.code + _os.EOL + _os.EOL + `To get curation module types data in JSON format, you can run with --format option.` + _os.EOL + _os.EOL + `linetv list:modules --format json`.code
     }, {
       header: 'Options',
       optionList: [{
