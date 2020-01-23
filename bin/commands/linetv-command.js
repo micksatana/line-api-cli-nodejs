@@ -144,19 +144,19 @@ class LINETvCommand extends _command.default {
       }
 
       if (operation === 'list:modules') {
-        await _linetvListModulesOperation.default.run();
+        await _linetvListModulesOperation.default.run(options);
       } else if (operation === 'get:spotlight') {
         await _linetvGetSportlightOperation.default.run(options);
       } else if (operation === 'list:category') {
-        await _linetvListCategoryOperation.default.run();
+        await _linetvListCategoryOperation.default.run(options);
       } else if (operation === 'get:category') {
-        await _linetvGetCategoryOperation.default.run();
+        await _linetvGetCategoryOperation.default.run(options);
       } else if (operation === 'ranking') {
-        await _linetvRankingOperation.default.run();
+        await _linetvRankingOperation.default.run(options);
       } else if (operation === 'search') {
-        await _linetvSearchOperation.default.run();
+        await _linetvSearchOperation.default.run(options);
       } else if (operation === 'list:station') {
-        await _linetvListStationOperation.default.run();
+        await _linetvListStationOperation.default.run(options);
       } else if (operation === 'get:station') {
         await _linetvGetStationOperation.default.run(options);
       } else if (operation === 'live') {

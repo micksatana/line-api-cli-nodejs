@@ -13,6 +13,8 @@ var _commandLineUsage = require("command-line-usage");
 
 var _operation = _interopRequireDefault(require("./operation"));
 
+var _os = require("os");
+
 var _linetvListCatagoryRequest = _interopRequireDefault(require("../apis/linetv-list-catagory-request"));
 
 var _linetvGetCategoryRequest = _interopRequireDefault(require("../apis/linetv-get-category-request"));
@@ -26,7 +28,17 @@ class LINETvGetCategoryOperation extends _operation.default {
     /** @type {Section[]} */
     const sections = [{
       header: 'Gets category home data.'.help,
-      content: `linetv get:category`.code
+      content: `To display category home data in table` + _os.EOL + _os.EOL + `linetv get:category`.code + _os.EOL + _os.EOL + `To get category home data in JSON format, you can run with --format option.` + _os.EOL + _os.EOL + `linetv get:category --format json`.code + _os.EOL + _os.EOL + `To get category home data start from selected page, you can run with --page option.` + _os.EOL + _os.EOL + `linetv get:category --page <number>`.code
+    }, {
+      header: 'Options',
+      optionList: [{
+        name: 'format'.code,
+        description: 'To display data in JSON format'
+      }, {
+        name: 'page'.code,
+        typeLabel: '{underline number}',
+        description: 'To display data starts from selected page'
+      }]
     }];
     return sections;
   }
@@ -39,7 +51,7 @@ class LINETvGetCategoryOperation extends _operation.default {
     return countryCode.length !== 2 ? 'Please input ISO 3166-2 (2 characters)' : true;
   }
 
-  static async run() {
+  static async run(options) {
     if (!this.validateConfig()) {
       return false;
     }
@@ -82,7 +94,7 @@ class LINETvGetCategoryOperation extends _operation.default {
       return true;
     }
 
-    let page = 1;
+    let page = options.page || 1;
     const {
       selectedCategory
     } = await prompts({
@@ -101,14 +113,33 @@ class LINETvGetCategoryOperation extends _operation.default {
       validate: this.validateNonZero
     }, this.cancelOption);
     let getResponse = await this.getRequest.send(channelId, countryCode, selectedCategory.categoryCode, page, countPerPage);
-    const clip = getResponse.data.body.representClip;
-    const column = {};
-    column['Represent Clip No.'.success] = clip.clipNo;
-    column['Represent Clip Title'.success] = clip.clipTitle;
-    column['Represent Clip URL'.success] = clip.serviceUrl;
-    column['Play Count'.success] = clip.playCount;
-    column['Likeit Count'.success] = clip.likeitPoint;
-    console.table(column);
+
+    if (options.format === 'json') {
+      console.log(JSON.stringify(getResponse.data, null, 2));
+      return true;
+    }
+
+    if (page === 1) {
+      const clip = getResponse.data.body.representClip;
+      const representClip = [{
+        ' ': 'Represent Clip No.'.success,
+        '  ': clip.clipNo
+      }, {
+        ' ': 'Represent Clip Title.'.success,
+        '  ': clip.clipTitle
+      }, {
+        ' ': 'Represent Clip URL'.success,
+        '  ': clip.serviceUrl
+      }, {
+        ' ': 'Play Count'.success,
+        '  ': clip.playCount
+      }, {
+        ' ': 'Likeit Count'.success,
+        '  ': clip.likeitPoint
+      }];
+      console.table(representClip);
+    }
+
     console.table(getResponse.data.body.channels.map(item => {
       const columnHeader = {};
       columnHeader['Channel ID'.success] = item.channelId;
@@ -124,7 +155,7 @@ class LINETvGetCategoryOperation extends _operation.default {
       } = await prompts({
         type: 'toggle',
         name: 'nextPage',
-        message: 'Next Page ?',
+        message: `Current page: ${page}. Go to next page ?`,
         initial: true,
         active: 'yes',
         inactive: 'no'

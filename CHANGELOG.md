@@ -2,14 +2,23 @@
 
 ## [1.3.x]
 ### Added
- - `linetv list:modules` Gets a spotlight data unit list such as represent_clip, editor_pick_clip, and theme_playlist. 
+ - `linetv list:modules` Gets a spotlight data unit list such as represent_clip, editor_pick_clip, and theme_playlist.
+ - `linetv list:modules --format json` Gets a spotlight data unit list in JSON format.
  - `linetv get:spotlight` Gets spotlight data.
  - `linetv get:spotlight --format json` Gets spotlight data in JSON format.
  - `linetv list:category` Gets a category list such as drama, music, etc.
+ - `linetv list:category --format json` Gets a category list in JSON format.
  - `linetv get:category` Gets category home data.
+ - `linetv get:category --format json` Gets category home data in JSON format.
+ - `linetv get:category --page <number>` Gets category home data start from selected page.
  - `linetv ranking` Gets clip ranking data.
+ - `linetv ranking --format json` Gets clip ranking data in JSON format.
+ - `linetv ranking --page <number>` Gets clip ranking data start from selected page.
  - `linetv search` Gets a clip search result.
+ - `linetv search --format json` Gets a clip search result in JSON format.
+ - `linetv search --page <number>` Gets a clip search result start from selected page.
  - `linetv list:station` Gets the station home (TV station) list.
+ - `linetv list:station --format json` Gets the station home (TV station) list in JSON format.
  - `linetv get:station` Gets the Station Home (TV Station) data.
  - `linetv get:station --format json` Gets the Station Home (TV Station) data in JSON format.
  - `linetv get:station --page <number>` Gets the Station Home (TV Station) data start from selected page.

@@ -33,10 +33,14 @@ class LINETvGetSpotlightOperation extends _operation.default {
       header: 'Options',
       optionList: [{
         name: 'format'.code,
-        description: 'To display data in JSON format'
+        description: 'To get data in JSON format'
       }]
     }];
     return sections;
+  }
+
+  static validateCountryCode(countryCode) {
+    return countryCode.length !== 2 ? 'Please input ISO 3166-2 (2 characters)' : true;
   }
 
   static async run(options) {
@@ -52,7 +56,8 @@ class LINETvGetSpotlightOperation extends _operation.default {
     } = (await prompts({
       type: 'text',
       name: 'countryCode',
-      message: 'Country Code?'
+      message: `Country Code ${'ISO 3166-2'.prompt}`,
+      validate: this.validateCountryCode
     }, this.cancelOption)) || {};
     let modules = [];
 

@@ -254,7 +254,13 @@ things remove:scenario-set
 ```
 linetv list:modules
 ```
-### List sportlight data
+To get sportlight curation module types in JSON use `--format` option.
+
+```
+linetv list:modules --format json
+```
+
+### Get sportlight data
 
 ```
 linetv get:spotlight
@@ -270,11 +276,27 @@ linetv get:sportlight --format json
 ```
 linetv list:category
 ```
+To get category list in JSON use `--format` option.
+
+```
+linetv get:sportlight --format json
+```
 
 ### Gets category home data
 
 ```
 linetv get:category
+```
+To get category home data in JSON use `--format` option.
+
+```
+linetv get:category --format json
+```
+
+To get category home data start from selected page use `--page` option.
+
+```
+linetv get:station --page <number>
 ```
 
 ### Gets clip ranking data
@@ -282,11 +304,33 @@ linetv get:category
 ```
 linetv ranking
 ```
+To get clip ranking data in JSON use `--format` option.
+
+```
+linetv ranking --format json
+```
+
+To get clip ranking data start from selected page use `--page` option.
+
+```
+linetv ranking --page <number>
+```
 
 ### Gets a clip search result
 
 ```
 linetv search
+```
+To get clip search result in JSON use `--format` option.
+
+```
+linetv search --format json
+```
+
+To get clip search result from selected page use `--page` option.
+
+```
+linetv search --page <number>
 ```
 
 ### Gets the station home (TV station) list.
@@ -294,6 +338,12 @@ linetv search
 ```
 linetv list:station
 ```
+To get station home (TV station) list in JSON use `--format` option.
+
+```
+linetv list:station --format json
+```
+
 
 ### Gets the Station Home (TV Station) data.
 
@@ -309,7 +359,7 @@ linetv get:station --format json
 To get TV Station data start from selected page use `--page` option.
 
 ```
-linetv get:station --page
+linetv get:station --page <number>
 ```
 
 ### Gets live schedule information.
