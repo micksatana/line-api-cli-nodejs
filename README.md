@@ -52,6 +52,14 @@ LINE API CLI helps you to work with LINE-API-related projects faster as you do n
  - `linetv`
     - `list:modules`
     - `get:spotlight`
+    - `list:category`
+    - `get:category`
+    - `list:station`
+    - `get:station`
+    - `ranking`
+    - `search`
+    - `live`
+
 
 ## Installation
 
