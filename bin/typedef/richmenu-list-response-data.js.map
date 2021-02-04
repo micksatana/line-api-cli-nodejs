@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../lib/typedef/richmenu-list-response-data.js"],"names":[],"mappings":"AAAA","sourcesContent":["/**\n * @typedef RichmenuListResponseData\n * @property {Array<RichMenuData>} richmenus\n */\n"],"file":"richmenu-list-response-data.js"}
+{"version":3,"sources":["../../lib/typedef/richmenu-list-response-data.js"],"names":[],"mappings":"AAAA;AACA;AACA;AACA","sourcesContent":["/**\n * @typedef RichmenuListResponseData\n * @property {Array<RichMenuData>} richmenus\n */\n"],"file":"richmenu-list-response-data.js"}
