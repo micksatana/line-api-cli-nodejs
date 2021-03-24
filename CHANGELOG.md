@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.4]
+
+### Fixed
+
+- Update README.md
+
 ## [1.3.2]
 
 ### Changed

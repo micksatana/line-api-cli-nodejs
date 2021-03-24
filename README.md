@@ -1,10 +1,10 @@
+# line-api-cli
 
-# line-api-cli-nodejs
 [![Actions status](https://github.com/micksatana/line-api-cli-nodejs/workflows/build/badge.svg)](https://github.com/micksatana/line-api-cli-nodejs/actions)
 [![Codecov](https://codecov.io/gh/micksatana/line-api-cli-nodejs/branch/master/graph/badge.svg)](https://codecov.io/gh/micksatana/line-api-cli-nodejs)
 [![Dependencies status](https://david-dm.org/micksatana/line-api-cli-nodejs/status.svg)](https://david-dm.org/micksatana/line-api-cli-nodejs)
-[![Version](https://img.shields.io/npm/v/@intocode-io/line-api-cli.svg)](https://npmjs.com/package/@intocode-io/line-api-cli)
-![NPM](https://img.shields.io/npm/l/@intocode-io/line-api-cli)
+[![Version](https://img.shields.io/npm/v/line-api-cli.svg)](https://npmjs.com/package/line-api-cli)
+![NPM](https://img.shields.io/npm/l/line-api-cli)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/micksatana?locale.x=en_GB)
 
 Command line interface for LINE APIs. This module will help you to easily work with LINE APIs via CLI.
@@ -14,60 +14,70 @@ Command line interface for LINE APIs. This module will help you to easily work w
 LINE API CLI helps you to work with LINE-API-related projects faster as you do not need to switch between a web browser and IDE ( after your first-time setup :P ). If you already are a hardcore "Terminal/Console" fanboy that using cURL to work with LINE APIs, using this package will reduce your time typing same long API cURL commands.
 
 ### Available commands, operations, and options
+
 #### LINE API configuration and token management
- - `line`
-    - `init`
-    - `token`
-      - `--issue`
-      - `--revoke`
+
+- `line`
+  - `init`
+  - `token`
+    - `--issue`
+    - `--revoke`
+
 #### Richmenu API
- - `richmenu`
-    - `add`
-    - `remove`
-    - `list`
-    - `default`
-    - `link`
-    - `unlink`
+
+- `richmenu`
+  - `add`
+  - `remove`
+  - `list`
+  - `default`
+  - `link`
+  - `unlink`
+
 #### LIFF API v1
- - `liff`
-    - `add`
-    - `remove`
-    - `update`
-    - `list`
+
+- `liff`
+  - `add`
+  - `remove`
+  - `update`
+  - `list`
+
 #### LINE Things API
- - `things`
-    - `add:trial`
-    - `remove:trial`
-    - `list:trial`
-    - `get:device`
-    - `get:devices`
-    - `get:product`
+
+- `things`
+  - `add:trial`
+  - `remove:trial`
+  - `list:trial`
+  - `get:device`
+  - `get:devices`
+  - `get:product`
+
 #### Scenario management API for automatic communication
- - `things`
-   - `register:scenario-set`
-   - `remove:scenario-set`
-   - `get:scenario-set`
+
+- `things`
+  - `register:scenario-set`
+  - `remove:scenario-set`
+  - `get:scenario-set`
 
 #### LINE TV API
- - `linetv`
-    - `list:modules`
-    - `get:spotlight`
-    - `list:category`
-    - `get:category`
-    - `list:station`
-    - `get:station`
-    - `ranking`
-    - `search`
-    - `live`
 
+- `linetv`
+  - `list:modules`
+  - `get:spotlight`
+  - `list:category`
+  - `get:category`
+  - `list:station`
+  - `get:station`
+  - `ranking`
+  - `search`
+  - `live`
 
 ## Installation
 
 ```
-npm i @intocode-io/line-api-cli -g
+npm i -g line-api-cli
 ```
 
-<img width="414" alt="npm i @intocode-io/line-api-cli -g" src="https://user-images.githubusercontent.com/1315909/64685066-7e4fc380-d4b0-11e9-9c69-11f85fe6dd97.png">
+<img width="414" alt="npm i -g line-api-cli" src="https://user-images.githubusercontent.com/1315909/64685066-7e4fc380-d4b0-11e9-9c69-11f85fe6dd97.png">
 
 ## Project setup with `line` command
 
@@ -262,6 +272,7 @@ things remove:scenario-set
 ```
 linetv list:modules
 ```
+
 To get sportlight curation module types in JSON use `--format` option.
 
 ```
@@ -273,6 +284,7 @@ linetv list:modules --format json
 ```
 linetv get:spotlight
 ```
+
 To get sportlight data in JSON use `--format` option.
 
 ```
@@ -284,6 +296,7 @@ linetv get:sportlight --format json
 ```
 linetv list:category
 ```
+
 To get category list in JSON use `--format` option.
 
 ```
@@ -295,6 +308,7 @@ linetv get:sportlight --format json
 ```
 linetv get:category
 ```
+
 To get category home data in JSON use `--format` option.
 
 ```
@@ -312,6 +326,7 @@ linetv get:station --page <number>
 ```
 linetv ranking
 ```
+
 To get clip ranking data in JSON use `--format` option.
 
 ```
@@ -329,6 +344,7 @@ linetv ranking --page <number>
 ```
 linetv search
 ```
+
 To get clip search result in JSON use `--format` option.
 
 ```
@@ -346,18 +362,19 @@ linetv search --page <number>
 ```
 linetv list:station
 ```
+
 To get station home (TV station) list in JSON use `--format` option.
 
 ```
 linetv list:station --format json
 ```
 
-
 ### Gets the Station Home (TV Station) data.
 
 ```
 linetv get:station
 ```
+
 To get TV Station data in JSON use `--format` option.
 
 ```
@@ -375,6 +392,7 @@ linetv get:station --page <number>
 ```
 linetv live
 ```
+
 To get live schedule data in JSON use `--format` option.
 
 ```
@@ -384,10 +402,13 @@ linetv live --format json
 ## Comprehensive usage
 
 We provide comprehensive usage of each command / operation / option with CLI. Simply run a command with/without operation and follow by `--help` option. For example,
+
 ```
 line token --help
 ```
+
 Or
+
 ```
 line --help
 ```
