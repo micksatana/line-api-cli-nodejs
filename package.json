@@ -44,9 +44,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/intocode-io/line-api-cli-nodejs/issues"
+    "url": "https://github.com/micksatana/line-api-cli-nodejs/issues"
   },
-  "homepage": "https://github.com/intocode-io/line-api-cli-nodejs#readme",
+  "homepage": "https://github.com/micksatana/line-api-cli-nodejs#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "colors": "^1.4.0",
