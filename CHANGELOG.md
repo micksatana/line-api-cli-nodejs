@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.8]
+
+### Fixed
+
+- Fixed yaml.safeDump and yaml.safeLoad issues
+
 ## [1.3.5]
 
 ### Added

@@ -7,13 +7,13 @@ exports.default = void 0;
 
 var _commandLineUsage = require("command-line-usage");
 
-var _fs = _interopRequireDefault(require("fs"));
-
 var _os = require("os");
 
-var _jsYaml = _interopRequireDefault(require("js-yaml"));
-
 var _operation = _interopRequireDefault(require("./operation"));
+
+var _fs = _interopRequireDefault(require("fs"));
+
+var _jsYaml = _interopRequireDefault(require("js-yaml"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -95,7 +95,7 @@ class LINEInitOperation extends _operation.default {
       }
     };
 
-    _fs.default.writeFileSync(`./${LINEInitOperation.configFileName}`, _jsYaml.default.safeDump(config));
+    _fs.default.writeFileSync(`./${LINEInitOperation.configFileName}`, _jsYaml.default.dump(config));
 
     console.log(`Successfully written configuration file at ./${LINEInitOperation.configFileName}`.info);
     return true;

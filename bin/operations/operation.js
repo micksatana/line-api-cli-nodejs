@@ -34,7 +34,7 @@ class Operation {
       }
 
       try {
-        this._config = _jsYaml.default.safeLoad(configFile);
+        this._config = _jsYaml.default.load(configFile);
       } catch (error) {
         console.log('Unable to safe load configuration file', error);
         process.exit(1);
@@ -80,8 +80,8 @@ class Operation {
     return;
   }
   /**
-   * 
-   * @param {import('axios').AxiosResponse} response 
+   *
+   * @param {import('axios').AxiosResponse} response
    */
 
 

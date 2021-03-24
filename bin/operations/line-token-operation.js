@@ -5,21 +5,21 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _commandLineUsage = require("command-line-usage");
-
-var _fs = _interopRequireDefault(require("fs"));
-
 var _os = require("os");
 
-var _jsYaml = _interopRequireDefault(require("js-yaml"));
-
-var _operation = _interopRequireDefault(require("./operation"));
+var _imageHelper = _interopRequireDefault(require("../image-helper"));
 
 var _oauthIssueTokenRequest = _interopRequireDefault(require("../apis/oauth-issue-token-request"));
 
 var _oauthRevokeTokenRequest = _interopRequireDefault(require("../apis/oauth-revoke-token-request"));
 
-var _imageHelper = _interopRequireDefault(require("../image-helper"));
+var _operation = _interopRequireDefault(require("./operation"));
+
+var _commandLineUsage = require("command-line-usage");
+
+var _fs = _interopRequireDefault(require("fs"));
+
+var _jsYaml = _interopRequireDefault(require("js-yaml"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -109,7 +109,7 @@ class LINETokenOperation extends _operation.default {
 
       config.channel.accessToken = accessToken;
 
-      _fs.default.writeFileSync(`./${this.configFileName}`, _jsYaml.default.safeDump(config));
+      _fs.default.writeFileSync(`./${this.configFileName}`, _jsYaml.default.dump(config));
     }
 
     return true;
