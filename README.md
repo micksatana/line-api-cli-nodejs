@@ -2,7 +2,7 @@
 
 [![Actions status](https://github.com/micksatana/line-api-cli-nodejs/workflows/build/badge.svg)](https://github.com/micksatana/line-api-cli-nodejs/actions)
 [![Codecov](https://codecov.io/gh/micksatana/line-api-cli-nodejs/branch/master/graph/badge.svg)](https://codecov.io/gh/micksatana/line-api-cli-nodejs)
-[![Dependencies status](https://david-dm.org/micksatana/line-api-cli-nodejs/status.svg)](https://david-dm.org/micksatana/line-api-cli-nodejs)
+![Dependencies status](https://badgen.net/dependabot/micksatana/line-api-cli-nodejs?icon=dependabot)
 [![Version](https://img.shields.io/npm/v/line-api-cli.svg)](https://npmjs.com/package/line-api-cli)
 ![NPM](https://img.shields.io/npm/l/line-api-cli)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/micksatana?locale.x=en_GB)

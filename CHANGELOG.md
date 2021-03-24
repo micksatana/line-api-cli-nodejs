@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.3.5]
+
+### Added
+
+- Added Dependabot for dependencies check
+
+### Removed
+
+- Removed david-dm
+
 ## [1.3.4]
 
 ### Fixed
