@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../lib/typedef/linetv-search-response-data.js"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA","sourcesContent":["/**\n * @typedef LINETvSearchResponseData\n * @property {{ message: string; code: number }} header\n * @property {{ clips: Array<LINETvClipData> ; hasMore: boolean; total: number}} body\n */\n"],"file":"linetv-search-response-data.js"}

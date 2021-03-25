@@ -1,14 +1,15 @@
 module.exports = {
-  collectCoverage: true,
-  collectCoverageFrom: [
-    'lib/**/*.{js,jsx}',
-    '!lib/clis/*.{js,jsx}',
-    '!**/typedef/**',
-    '!**/node_modules/**',
-    '!**/__tests__/**',
-    '!**/__mocks__/**'
-  ],
-  coverageDirectory: 'coverage',
-  roots: ['lib'],
-  setupFilesAfterEnv: ['jest-extended', '<rootDir>/global-test-setup.js', 'jest-date-mock']
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  collectCoverageFrom: ['lib/**/*.ts'],
+  coverageThreshold: {
+    global: {
+      branches: 90,
+      functions: 90,
+      lines: 90,
+      statements: 90
+    }
+  },
+  testPathIgnorePatterns: ['bin/', '/node_modules/'],
+  globalSetup: './global-setup.ts'
 };

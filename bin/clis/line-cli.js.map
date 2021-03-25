@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../lib/clis/line-cli.js"],"names":["LINECommand","cli"],"mappings":"AAAA;;;AACA;;;;AAEAA,qBAAYC,GAAZ","sourcesContent":["#!/usr/bin/env node\nimport LINECommand from '../commands/line-command';\n\nLINECommand.cli();\n"],"file":"line-cli.js"}

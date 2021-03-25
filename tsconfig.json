@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "checkJs": true,
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "lib": ["es2020"],
+    "target": "es2019",
+    "outDir": "./bin",
+    "rootDir": "./lib"
+  },
+  "include": ["lib/**/*.ts"],
+  "exclude": ["node_modules", "**/__tests__/*", "**/__mocks__/*"]
+}

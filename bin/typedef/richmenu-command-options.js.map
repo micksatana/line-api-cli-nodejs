@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../lib/typedef/richmenu-command-options.js"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA","sourcesContent":["/**\n * @typedef RichmenuCommandOptions\n * @property {boolean} help\n * @property {boolean} version\n */\n"],"file":"richmenu-command-options.js"}

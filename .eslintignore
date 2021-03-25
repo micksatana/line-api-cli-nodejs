@@ -1,9 +1,0 @@
-bin
-coverage
-doc
-man
-node_modules
-babel.config.js
-functions
-__tests__
-__mocks__
