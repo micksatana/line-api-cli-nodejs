@@ -1,5 +1,4 @@
 import colors from 'colors/safe';
-import { config } from '../../../config';
 import prompts from 'prompts';
 import { revokeAccessToken } from '../../../api/login/oauth2';
 
@@ -16,9 +15,7 @@ export const revoke = async () => {
 
   try {
     const response = await revokeAccessToken({
-      access_token: accessToken,
-      client_id: `${config().channel.id}`,
-      client_secret: config().channel.secret
+      access_token: accessToken
     });
 
     if (response.status === 200) {

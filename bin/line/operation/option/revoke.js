@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.revoke = void 0;
 const safe_1 = __importDefault(require("colors/safe"));
-const config_1 = require("../../../config");
 const prompts_1 = __importDefault(require("prompts"));
 const oauth2_1 = require("../../../api/login/oauth2");
 const revoke = async () => {
@@ -19,9 +18,7 @@ const revoke = async () => {
     }
     try {
         const response = await oauth2_1.revokeAccessToken({
-            access_token: accessToken,
-            client_id: `${config_1.config().channel.id}`,
-            client_secret: config_1.config().channel.secret
+            access_token: accessToken
         });
         if (response.status === 200) {
             console.log(safe_1.default.green('Revoked'));

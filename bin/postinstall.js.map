@@ -1,0 +1,1 @@
+{"version":3,"file":"postinstall.js","sourceRoot":"","sources":["../lib/postinstall.ts"],"names":[],"mappings":";;;;;AAAA,2BAAyB;AACzB,uDAAiC;AACjC,iCAAkC;AAElC,KAAK,UAAU,GAAG;IAChB,MAAM,eAAQ,EAAE,CAAC;IACjB,OAAO,CAAC,GAAG,CACT,QAAG;QACD,cAAM,CAAC,KAAK,CACV,OAAO,cAAM,CAAC,IAAI,CAChB,WAAW,CACZ,4CAA4C,CAC9C;QACD,QAAG,CACN,CAAC;AACJ,CAAC;AAED,GAAG,EAAE,CAAC"}

@@ -25,7 +25,7 @@ const issue = async () => {
         console.log(safe_1.default.green(`Expiry date: ${safe_1.default.white(expiryDate.toLocaleString())}`));
     }
     catch (error) {
-        console.error(error.response);
+        console.error(error);
         return false;
     }
     const { save } = await prompts_1.default({
