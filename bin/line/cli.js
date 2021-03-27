@@ -19,7 +19,8 @@ const cli = async () => {
             { name: 'help', alias: 'h', type: Boolean },
             { name: 'version', alias: 'v', type: Boolean },
             { name: 'issue', type: Boolean },
-            { name: 'revoke', type: Boolean }
+            { name: 'revoke', type: Boolean },
+            { name: 'verify', type: Boolean }
         ], { argv });
         if (options.help) {
             await draw_1.drawHelp();

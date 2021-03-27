@@ -22,6 +22,7 @@ LINE API CLI helps you to work with LINE-API-related projects faster as you do n
   - `token`
     - `--issue`
     - `--revoke`
+    - `--verify`
 
 #### Richmenu API
 

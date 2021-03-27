@@ -1,4 +1,4 @@
-import { ISSUE_ENDPOINT, IssueAccessTokenService } from '../oauth2';
+import { ISSUE_ENDPOINT, IssueAccessTokenService } from '../issue';
 
 describe('IssueAccessTokenService', () => {
   test('endpoint', () => {
@@ -10,7 +10,7 @@ describe('IssueAccessTokenService', () => {
   test('content-type', () => {
     expect(IssueAccessTokenService.defaults.headers).toHaveProperty(
       'content-type',
-      'application/x-www-form-urlencode'
+      'application/x-www-form-urlencoded'
     );
   });
 });

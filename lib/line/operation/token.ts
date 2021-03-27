@@ -6,10 +6,11 @@ import commandLineUsage from 'command-line-usage';
 import { drawHelp } from '../../draw';
 import { issue } from './option/issue';
 import { revoke } from './option/revoke';
+import { verify } from './option/verify';
 
 export const TokenUsage = [
   {
-    header: colors.green('Issue/Revoke access token '),
+    header: colors.green('Issue/Revoke/Verify access token '),
     content:
       `After channel ID and secret are configured. Issue a channel access token and save it.` +
       EOL +
@@ -17,10 +18,14 @@ export const TokenUsage = [
       colors.cyan(`line token --issue`) +
       EOL +
       EOL +
-      `In case you want to revoke an access token, you can run with --revoke option.` +
+      `To revoke an access token, run with --revoke option.` +
       EOL +
       EOL +
-      colors.cyan(`line token --revoke`)
+      colors.cyan(`line token --revoke`) +
+      `To verify an access token, run with --verify option.` +
+      EOL +
+      EOL +
+      colors.cyan(`line token --verify`)
   },
   {
     header: 'Options',
@@ -34,13 +39,23 @@ export const TokenUsage = [
         name: colors.cyan('revoke'),
         typeLabel: colors.grey('{underline accessToken}'),
         description: 'Revoke a channel access token.'
+      },
+      {
+        name: colors.cyan('verify'),
+        typeLabel: colors.grey('{underline accessToken}'),
+        description: 'Verify a channel access token.'
       }
     ]
   }
 ];
 
 export const token = async (options) => {
-  if (!options || (options.issue !== true && options.revoke !== true)) {
+  if (
+    !options ||
+    (options.issue !== true &&
+      options.revoke !== true &&
+      options.verify !== true)
+  ) {
     await drawHelp();
     console.log(commandLineUsage(TokenUsage));
 
@@ -71,8 +86,9 @@ export const token = async (options) => {
 
   if (options.issue === true) {
     return issue();
-  } else {
-    // `options.revoke` will be true due to the first if-condition in this `run` method
+  } else if (options.revoke === true) {
     return revoke();
+  } else {
+    return verify();
   }
 };

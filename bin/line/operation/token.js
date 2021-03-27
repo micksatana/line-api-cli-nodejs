@@ -11,19 +11,24 @@ const command_line_usage_1 = __importDefault(require("command-line-usage"));
 const draw_1 = require("../../draw");
 const issue_1 = require("./option/issue");
 const revoke_1 = require("./option/revoke");
+const verify_1 = require("./option/verify");
 exports.TokenUsage = [
     {
-        header: safe_1.default.green('Issue/Revoke access token '),
+        header: safe_1.default.green('Issue/Revoke/Verify access token '),
         content: `After channel ID and secret are configured. Issue a channel access token and save it.` +
             os_1.EOL +
             os_1.EOL +
             safe_1.default.cyan(`line token --issue`) +
             os_1.EOL +
             os_1.EOL +
-            `In case you want to revoke an access token, you can run with --revoke option.` +
+            `To revoke an access token, run with --revoke option.` +
             os_1.EOL +
             os_1.EOL +
-            safe_1.default.cyan(`line token --revoke`)
+            safe_1.default.cyan(`line token --revoke`) +
+            `To verify an access token, run with --verify option.` +
+            os_1.EOL +
+            os_1.EOL +
+            safe_1.default.cyan(`line token --verify`)
     },
     {
         header: 'Options',
@@ -36,12 +41,20 @@ exports.TokenUsage = [
                 name: safe_1.default.cyan('revoke'),
                 typeLabel: safe_1.default.grey('{underline accessToken}'),
                 description: 'Revoke a channel access token.'
+            },
+            {
+                name: safe_1.default.cyan('verify'),
+                typeLabel: safe_1.default.grey('{underline accessToken}'),
+                description: 'Verify a channel access token.'
             }
         ]
     }
 ];
 const token = async (options) => {
-    if (!options || (options.issue !== true && options.revoke !== true)) {
+    if (!options ||
+        (options.issue !== true &&
+            options.revoke !== true &&
+            options.verify !== true)) {
         await draw_1.drawHelp();
         console.log(command_line_usage_1.default(exports.TokenUsage));
         return false;
@@ -60,9 +73,11 @@ const token = async (options) => {
     if (options.issue === true) {
         return issue_1.issue();
     }
-    else {
-        // `options.revoke` will be true due to the first if-condition in this `run` method
+    else if (options.revoke === true) {
         return revoke_1.revoke();
+    }
+    else {
+        return verify_1.verify();
     }
 };
 exports.token = token;
