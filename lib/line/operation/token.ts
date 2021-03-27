@@ -12,17 +12,21 @@ export const TokenUsage = [
   {
     header: colors.green('Issue/Revoke/Verify access token '),
     content:
-      `After channel ID and secret are configured. Issue a channel access token and save it.` +
+      `After channel ID and secret are configured. Issue a channel access token and save it in ${colors.grey(
+        CONFIG_FILE_NAME
+      )}` +
       EOL +
       EOL +
       colors.cyan(`line token --issue`) +
       EOL +
       EOL +
-      `To revoke an access token, run with --revoke option.` +
+      `To revoke an access token,` +
       EOL +
       EOL +
       colors.cyan(`line token --revoke`) +
-      `To verify an access token, run with --verify option.` +
+      EOL +
+      EOL +
+      `To verify an access token,` +
       EOL +
       EOL +
       colors.cyan(`line token --verify`)
@@ -32,17 +36,18 @@ export const TokenUsage = [
     optionList: [
       {
         name: colors.cyan('issue'),
+        typeLabel: ' ',
         description:
           'Issue a channel access token from pre-configured channel ID and secret'
       },
       {
         name: colors.cyan('revoke'),
-        typeLabel: colors.grey('{underline accessToken}'),
+        typeLabel: ' ',
         description: 'Revoke a channel access token.'
       },
       {
         name: colors.cyan('verify'),
-        typeLabel: colors.grey('{underline accessToken}'),
+        typeLabel: ' ',
         description: 'Verify a channel access token.'
       }
     ]

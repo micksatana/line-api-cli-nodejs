@@ -22,7 +22,7 @@ const issue = async () => {
         accessToken = response.data.access_token;
         expiryDate.setSeconds(response.data.expires_in);
         console.log(safe_1.default.green(`Access token: ${safe_1.default.white(accessToken)}`));
-        console.log(safe_1.default.green(`Expiry date: ${safe_1.default.white(expiryDate.toLocaleString())}`));
+        console.log(safe_1.default.green(`Expiry date: ${safe_1.default.white(expiryDate.toISOString())}`));
     }
     catch (error) {
         console.error(error);

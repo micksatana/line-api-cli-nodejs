@@ -22,7 +22,7 @@ export const issue = async () => {
 
     console.log(colors.green(`Access token: ${colors.white(accessToken)}`));
     console.log(
-      colors.green(`Expiry date: ${colors.white(expiryDate.toLocaleString())}`)
+      colors.green(`Expiry date: ${colors.white(expiryDate.toISOString())}`)
     );
   } catch (error) {
     console.error(error);

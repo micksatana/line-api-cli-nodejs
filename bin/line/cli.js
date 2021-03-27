@@ -23,7 +23,6 @@ const cli = async () => {
             { name: 'verify', type: Boolean }
         ], { argv });
         if (options.help) {
-            await draw_1.drawHelp();
             switch (operation) {
                 case 'init':
                     console.log(command_line_usage_1.default(init_1.InitUsage));
@@ -37,7 +36,6 @@ const cli = async () => {
             process.exit(0);
         }
         if (options.version) {
-            await draw_1.drawHelp();
             console.log(version_1.version());
             process.exit(0);
         }

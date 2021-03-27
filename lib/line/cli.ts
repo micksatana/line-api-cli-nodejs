@@ -26,7 +26,6 @@ export const cli = async () => {
     );
 
     if (options.help) {
-      await drawHelp();
       switch (operation) {
         case 'init':
           console.log(commandLineUsage(InitUsage));
@@ -41,7 +40,6 @@ export const cli = async () => {
     }
 
     if (options.version) {
-      await drawHelp();
       console.log(version());
       process.exit(0);
     }
