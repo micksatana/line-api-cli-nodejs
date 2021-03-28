@@ -3,30 +3,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.init = exports.InitUsage = void 0;
+exports.command = void 0;
 const fs_1 = require("fs");
+const safe_1 = require("colors/safe");
 const config_1 = require("../../config");
-const os_1 = require("os");
-const safe_1 = __importDefault(require("colors/safe"));
 const js_yaml_1 = require("js-yaml");
-exports.InitUsage = [
-    {
-        header: safe_1.default.green('Initialize configuration file for LINE API CLIs'),
-        content: 'Initialize configuration file' +
-            os_1.EOL +
-            os_1.EOL +
-            safe_1.default.cyan('line init') +
-            os_1.EOL +
-            os_1.EOL +
-            `This command should be run first time under project root folder. After run successfully, you will get ${config_1.CONFIG_FILE_NAME} configuration file`
-    }
-];
-const init = async (options) => {
-    const prompts = require('prompts');
+const prompts_1 = __importDefault(require("prompts"));
+const command = async (options) => {
     const exists = fs_1.existsSync(`./${config_1.CONFIG_FILE_NAME}`);
     if (exists === true) {
-        console.log(safe_1.default.yellow(`${config_1.CONFIG_FILE_NAME} already exists`));
-        const { overwrite } = await prompts({
+        console.log(safe_1.yellow(`${config_1.CONFIG_FILE_NAME} already exists`));
+        const { overwrite } = await prompts_1.default({
             type: 'toggle',
             name: 'overwrite',
             message: 'Do you want to overwrite?',
@@ -35,11 +22,11 @@ const init = async (options) => {
             inactive: 'No'
         });
         if (!overwrite) {
-            return false;
+            process.exit(0);
         }
     }
-    console.log(safe_1.default.green('Setting up configuration file'));
-    const { id } = await prompts({
+    console.log(safe_1.green('Setting up configuration file'));
+    const { id } = await prompts_1.default({
         type: 'number',
         name: 'id',
         message: 'Channel ID?',
@@ -47,14 +34,14 @@ const init = async (options) => {
     }, {
         onCancel: () => process.exit(0)
     });
-    const { secret } = await prompts({
+    const { secret } = await prompts_1.default({
         type: 'text',
         name: 'secret',
         message: 'Channel Secret?'
     }, {
         onCancel: () => process.exit(0)
     });
-    const { hasLongLivedAccessToken } = await prompts({
+    const { hasLongLivedAccessToken } = await prompts_1.default({
         type: 'toggle',
         name: 'hasLongLivedAccessToken',
         message: 'Do you have long-lived access token?',
@@ -66,7 +53,7 @@ const init = async (options) => {
     });
     let accessToken = '';
     if (hasLongLivedAccessToken) {
-        const rsToken = await prompts({
+        const rsToken = await prompts_1.default({
             type: 'text',
             name: 'accessToken',
             message: 'Long-lived access token?'
@@ -79,8 +66,8 @@ const init = async (options) => {
         channel: { id, secret, accessToken }
     };
     fs_1.writeFileSync(`./${config_1.CONFIG_FILE_NAME}`, js_yaml_1.dump(newConfig));
-    console.log(safe_1.default.white(`Successfully written configuration file at ./${config_1.CONFIG_FILE_NAME}`));
-    return true;
+    console.log(safe_1.white(`Successfully written configuration file at ./${config_1.CONFIG_FILE_NAME}`));
+    process.exit(0);
 };
-exports.init = init;
-//# sourceMappingURL=init.js.map
+exports.command = command;
+//# sourceMappingURL=command.js.map

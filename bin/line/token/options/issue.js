@@ -5,24 +5,25 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.issue = void 0;
 const config_1 = require("../../../config");
-const safe_1 = __importDefault(require("colors/safe"));
+const safe_1 = require("colors/safe");
 const js_yaml_1 = require("js-yaml");
 const oauth2_1 = require("../../../api/login/oauth2");
 const prompts_1 = __importDefault(require("prompts"));
 const fs_1 = require("fs");
 const issue = async () => {
+    const config = config_1.loadConfig();
     let accessToken;
     let expiryDate = new Date();
     try {
         const response = await oauth2_1.issueAccessToken({
             grant_type: 'client_credentials',
-            client_id: `${config_1.config().channel.id}`,
-            client_secret: config_1.config().channel.secret
+            client_id: `${config.channel.id}`,
+            client_secret: config.channel.secret
         });
         accessToken = response.data.access_token;
         expiryDate.setSeconds(response.data.expires_in);
-        console.log(safe_1.default.green(`Access token: ${safe_1.default.white(accessToken)}`));
-        console.log(safe_1.default.green(`Expiry date: ${safe_1.default.white(expiryDate.toISOString())}`));
+        console.log(safe_1.green(`Access token: ${safe_1.white(accessToken)}`));
+        console.log(safe_1.green(`Expiry date: ${safe_1.white(expiryDate.toISOString())}`));
     }
     catch (error) {
         console.error(error);
@@ -38,7 +39,7 @@ const issue = async () => {
     });
     if (save) {
         const newConfig = {
-            ...config_1.config()
+            ...config
         };
         newConfig.channel.accessToken = accessToken;
         fs_1.writeFileSync(`./${config_1.CONFIG_FILE_NAME}`, js_yaml_1.dump(newConfig));

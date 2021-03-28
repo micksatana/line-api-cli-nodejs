@@ -1,30 +1,16 @@
 import { existsSync, writeFileSync } from 'fs';
+import { green, white, yellow } from 'colors/safe';
 
 import { CONFIG_FILE_NAME } from '../../config';
-import { EOL } from 'os';
-import colors from 'colors/safe';
+import { CommandLineOptions } from 'command-line-args';
 import { dump } from 'js-yaml';
+import prompts from 'prompts';
 
-export const InitUsage = [
-  {
-    header: colors.green('Initialize configuration file for LINE API CLIs'),
-    content:
-      'Initialize configuration file' +
-      EOL +
-      EOL +
-      colors.cyan('line init') +
-      EOL +
-      EOL +
-      `This command should be run first time under project root folder. After run successfully, you will get ${CONFIG_FILE_NAME} configuration file`
-  }
-];
-
-export const init = async (options) => {
-  const prompts = require('prompts');
+export const command = async (options: CommandLineOptions) => {
   const exists = existsSync(`./${CONFIG_FILE_NAME}`);
 
   if (exists === true) {
-    console.log(colors.yellow(`${CONFIG_FILE_NAME} already exists`));
+    console.log(yellow(`${CONFIG_FILE_NAME} already exists`));
 
     const { overwrite } = await prompts({
       type: 'toggle',
@@ -36,11 +22,11 @@ export const init = async (options) => {
     });
 
     if (!overwrite) {
-      return false;
+      process.exit(0);
     }
   }
 
-  console.log(colors.green('Setting up configuration file'));
+  console.log(green('Setting up configuration file'));
 
   const { id } = await prompts(
     {
@@ -102,10 +88,8 @@ export const init = async (options) => {
   writeFileSync(`./${CONFIG_FILE_NAME}`, dump(newConfig));
 
   console.log(
-    colors.white(
-      `Successfully written configuration file at ./${CONFIG_FILE_NAME}`
-    )
+    white(`Successfully written configuration file at ./${CONFIG_FILE_NAME}`)
   );
 
-  return true;
+  process.exit(0);
 };

@@ -1,4 +1,1 @@
-export const version = () => {
-  const pjsonVersion = require('../../package.json').version;
-  return `LINE API CLIs v${pjsonVersion}`;
-};
+export const version = '1.3.8';
